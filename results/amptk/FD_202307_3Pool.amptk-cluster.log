@@ -1,0 +1,123 @@
+[07/27/23 15:09:30]: /opt/linux/rocky/8.x/x86_64/pkgs/amptk/1.6/bin/amptk cluster -i FD_202307_3Pool.demux.fq.gz -o FD_202307_3Pool --usearch usearch9 --map_filtered -e 0.9 --cpus 64
+
+[07/27/23 15:09:30]: OS: Rocky Linux 8.5, 64 cores, ~ 264 GB RAM. Python: 3.10.0
+[07/27/23 15:09:30]: Python Modules: numpy v1.24.2, pandas v1.5.3, matplotlib v3.7.1, psutil v5.9.4, natsort v8.3.1, biopython v1.81, edlib v1.3.9, biom-format v2.1.14
+[07/27/23 15:09:30]: AMPtk v1.6.0, VSEARCH v2.22.1
+[07/27/23 15:09:30]: Loading FASTQ Records
+[07/27/23 15:09:30]: vsearch --fastq_filter FD_202307_3Pool.demux.fq.gz --fastaout FD_202307_3Pool_tmp/FD_202307_3Pool.orig.fa --fastq_qmax 55 --threads 1
+[07/27/23 15:14:16]: vsearch v2.22.1_linux_x86_64, 251.5GB RAM, 64 cores
+https://github.com/torognes/vsearch
+
+Reading input file 100%
+20893082 sequences kept (of which 0 truncated), 0 sequences discarded.
+
+[07/27/23 15:14:37]: 20,893,082 reads (1.2 GB)
+[07/27/23 15:14:37]: Quality Filtering, expected errors < 0.9
+[07/27/23 15:14:37]: vsearch --fastq_filter FD_202307_3Pool.demux.fq.gz --fastq_maxee 0.9 --fastqout FD_202307_3Pool_tmp/FD_202307_3Pool.EE0.9.filter.fq --fastaout FD_202307_3Pool_tmp/FD_202307_3Pool.EE0.9.filter.fa --fastq_qmax 55 --threads 1
+[07/27/23 15:19:33]: vsearch v2.22.1_linux_x86_64, 251.5GB RAM, 64 cores
+https://github.com/torognes/vsearch
+
+Reading input file 100%
+16660399 sequences kept (of which 0 truncated), 4232683 sequences discarded.
+
+[07/27/23 15:19:49]: 16,660,399 reads passed
+[07/27/23 15:19:49]: De-replication (remove duplicate reads)
+[07/27/23 15:19:49]: vsearch --derep_fulllength FD_202307_3Pool_tmp/FD_202307_3Pool.EE0.9.filter.fa --sizeout --output FD_202307_3Pool_tmp/FD_202307_3Pool.EE0.9.derep.fa --threads 1
+[07/27/23 15:20:13]: vsearch v2.22.1_linux_x86_64, 251.5GB RAM, 64 cores
+https://github.com/torognes/vsearch
+
+Dereplicating file FD_202307_3Pool_tmp/FD_202307_3Pool.EE0.9.filter.fa 100%
+3479799340 nt in 16660399 seqs, min 100, max 250, avg 209
+Sorting 100%
+1148160 unique sequences, avg cluster 14.5, median 1, max 1547559
+Writing FASTA output file 100%
+
+[07/27/23 15:20:15]: 1,148,160 reads passed
+[07/27/23 15:20:15]: vsearch --sortbysize FD_202307_3Pool_tmp/FD_202307_3Pool.EE0.9.derep.fa --minsize 2 --output FD_202307_3Pool_tmp/FD_202307_3Pool.EE0.9.sort.fa --threads 1
+[07/27/23 15:20:16]: vsearch v2.22.1_linux_x86_64, 251.5GB RAM, 64 cores
+https://github.com/torognes/vsearch
+
+Reading file FD_202307_3Pool_tmp/FD_202307_3Pool.EE0.9.derep.fa 100%
+254178805 nt in 1148160 seqs, min 100, max 250, avg 221
+Getting sizes 100%
+Sorting 100%
+Median abundance: 3
+Writing output 100%
+
+[07/27/23 15:20:16]: Clustering OTUs (VSEARCH --cluster_smallmem)
+[07/27/23 15:20:16]: vsearch --cluster_smallmem FD_202307_3Pool_tmp/FD_202307_3Pool.EE0.9.sort.fa --relabel OTU --usersort --sizeout --id 0.97 --centroids FD_202307_3Pool_tmp/FD_202307_3Pool.EE0.9.smallmem.otus.fa --threads 64
+[07/27/23 15:20:26]: vsearch v2.22.1_linux_x86_64, 251.5GB RAM, 64 cores
+https://github.com/torognes/vsearch
+
+Reading file FD_202307_3Pool_tmp/FD_202307_3Pool.EE0.9.sort.fa 100%
+65092983 nt in 294039 seqs, min 100, max 250, avg 221
+Masking 100%
+Counting k-mers 100%
+Clustering 100%
+Sorting clusters 100%
+Writing clusters 100%
+Clusters: 3981 Size min 1, max 12668, avg 73.9
+Singletons: 1419, 0.5% of seqs, 35.6% of clusters
+
+[07/27/23 15:20:26]: De novo Chimera detection (VSEARCH --uchime_denovo)
+[07/27/23 15:20:26]: vsearch --uchime_denovo FD_202307_3Pool_tmp/FD_202307_3Pool.EE0.9.smallmem.otus.fa --sizein --nonchimeras FD_202307_3Pool_tmp/FD_202307_3Pool.EE0.9.otus.fa
+[07/27/23 15:20:28]: vsearch v2.22.1_linux_x86_64, 251.5GB RAM, 64 cores
+https://github.com/torognes/vsearch
+
+Reading file FD_202307_3Pool_tmp/FD_202307_3Pool.EE0.9.smallmem.otus.fa 100%
+848770 nt in 3981 seqs, min 106, max 250, avg 213
+Masking 100%
+Sorting by abundance 100%
+Counting k-mers 100%
+Detecting chimeras 100%
+Found 538 (13.5%) chimeras, 3436 (86.3%) non-chimeras,
+and 7 (0.2%) borderline sequences in 3981 unique sequences.
+Taking abundance information into account, this corresponds to
+2621 (0.9%) chimeras, 291208 (99.0%) non-chimeras,
+and 210 (0.1%) borderline sequences in 294039 total sequences.
+
+[07/27/23 15:20:28]: 3,436 OTUs
+[07/27/23 15:20:28]: Cleaning up padding from OTUs
+[07/27/23 15:20:28]: Validating OTU orientation
+[07/27/23 15:20:28]: vsearch --usearch_global FD_202307_3Pool_tmp/FD_202307_3Pool.EE0.9.sort.fa --db FD_202307_3Pool_tmp/FD_202307_3Pool.EE0.9.clean.otus.fa --sizein --id 0.97 --strand plus --uc FD_202307_3Pool_tmp/orient.uc
+[07/27/23 15:20:33]: vsearch v2.22.1_linux_x86_64, 251.5GB RAM, 64 cores
+https://github.com/torognes/vsearch
+
+Reading file FD_202307_3Pool_tmp/FD_202307_3Pool.EE0.9.clean.otus.fa 100%
+734431 nt in 3436 seqs, min 106, max 250, avg 214
+Masking 100%
+Counting k-mers 100%
+Creating k-mer index 100%
+Searching 100%
+Matching unique query sequences: 292097 of 294039 (99.34%)
+Matching total query sequences: 15778018 of 15806278 (99.82%)
+
+[07/27/23 15:20:33]: vsearch --usearch_global FD_202307_3Pool_tmp/FD_202307_3Pool.EE0.9.clean.otus.fa --db FD_202307_3Pool_tmp/FD_202307_3Pool.EE0.9.clean.otus.fa --self --id 0.95 --strand both --userout FD_202307_3Pool_tmp/orient-map.txt --userfields query+target+qstrand+id
+[07/27/23 15:20:34]: vsearch v2.22.1_linux_x86_64, 251.5GB RAM, 64 cores
+https://github.com/torognes/vsearch
+
+Reading file FD_202307_3Pool_tmp/FD_202307_3Pool.EE0.9.clean.otus.fa 100%
+734431 nt in 3436 seqs, min 106, max 250, avg 214
+Masking 100%
+Counting k-mers 100%
+Creating k-mer index 100%
+Searching 100%
+Matching unique query sequences: 1089 of 3436 (31.69%)
+
+[07/27/23 15:20:34]: Dropping 21 OTUs: OTU659, OTU657, OTU857, OTU790, OTU3274, OTU721, OTU744, OTU3214, OTU780, OTU726, OTU1258, OTU894, OTU967, OTU781, OTU3243, OTU771, OTU809, OTU3628, OTU3943, OTU3180, OTU2947
+[07/27/23 15:20:34]: 3,415 OTUs validated (21 dropped)
+[07/27/23 15:20:34]: Mapping Reads to OTUs and Building OTU table
+[07/27/23 15:20:34]: vsearch --usearch_global FD_202307_3Pool_tmp/FD_202307_3Pool.EE0.9.filter.fa --strand plus --id 0.97 --db FD_202307_3Pool_tmp/FD_202307_3Pool.passed.otus.fa --uc FD_202307_3Pool_tmp/FD_202307_3Pool.EE0.9.mapping.uc --otutabout FD_202307_3Pool_tmp/FD_202307_3Pool.EE0.9.otu_table.txt --threads 64
+[07/27/23 15:30:12]: vsearch v2.22.1_linux_x86_64, 251.5GB RAM, 64 cores
+https://github.com/torognes/vsearch
+
+Reading file FD_202307_3Pool_tmp/FD_202307_3Pool.passed.otus.fa 100%
+729181 nt in 3415 seqs, min 106, max 250, avg 214
+Masking 100%
+Counting k-mers 100%
+Creating k-mer index 100%
+Searching 100%
+Matching unique query sequences: 16399669 of 16660399 (98.44%)
+Writing OTU table (classic) 100%
+
+[07/27/23 15:30:14]: 16,399,669 reads mapped to OTUs (78%)
