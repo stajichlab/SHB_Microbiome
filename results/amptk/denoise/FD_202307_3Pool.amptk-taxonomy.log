@@ -1,0 +1,47 @@
+[07/27/23 14:56:25]: /opt/linux/rocky/8.x/x86_64/pkgs/amptk/1.6/bin/amptk taxonomy -f FD_202307_3Pool.filtered.otus.fa -i FD_202307_3Pool.final.txt -d ITS
+
+[07/27/23 14:56:25]: OS: Rocky Linux 8.5, 128 cores, ~ 528 GB RAM. Python: 3.10.0
+[07/27/23 14:56:25]: Python Modules: numpy v1.24.2, pandas v1.5.3, matplotlib v3.7.1, psutil v5.9.4, natsort v8.3.1, biopython v1.81, edlib v1.3.9, biom-format v2.1.14
+[07/27/23 14:56:25]: AMPtk v1.6.0, VSEARCH v2.22.1
+[07/27/23 14:56:25]: Loading FASTA Records
+[07/27/23 14:56:25]: 5,163 OTUs
+[07/27/23 14:56:25]: Global alignment OTUs with usearch_global (VSEARCH) against ITS.udb
+[07/27/23 14:56:25]: vsearch --usearch_global FD_202307_3Pool.filtered.otus.fa --db /bigdata/operations/pkgadmin/opt/linux/centos/8.x/x86_64/pkgs/amptk/1.6/lib/python3.10/site-packages/amptk/DB/ITS.udb --userout FD_202307_3Pool.usearch.txt --id 0.7 --strand both --output_no_hits --maxaccepts 500 --top_hits_only --userfields query+target+id --notrunclabels --threads 128
+[07/27/23 14:57:12]: vsearch v2.22.1_linux_x86_64, 503.5GB RAM, 128 cores
+https://github.com/torognes/vsearch
+
+Reading UDB file /bigdata/operations/pkgadmin/opt/linux/centos/8.x/x86_64/pkgs/amptk/1.6/lib/python3.10/site-packages/amptk/DB/ITS.udb 100%
+Reorganizing data in memory 100%
+Creating bitmaps 100%
+Parsing abundances 100%
+3660214381 nt in 6484445 seqs, min 100, max 6778, avg 564
+Searching 100%
+Matching unique query sequences: 4656 of 5163 (90.18%)
+
+[07/27/23 14:57:12]: Classifying OTUs with SINTAX (VSEARCH)
+[07/27/23 14:57:12]: vsearch --sintax FD_202307_3Pool.filtered.otus.fa --db /bigdata/operations/pkgadmin/opt/linux/centos/8.x/x86_64/pkgs/amptk/1.6/lib/python3.10/site-packages/amptk/DB/ITS_SINTAX.udb --tabbedout FD_202307_3Pool.sintax.txt -sintax_cutoff 0.8 --threads 128 --notrunclabels
+[07/27/23 14:57:20]: vsearch v2.22.1_linux_x86_64, 503.5GB RAM, 128 cores
+https://github.com/torognes/vsearch
+
+Reading UDB file /bigdata/operations/pkgadmin/opt/linux/centos/8.x/x86_64/pkgs/amptk/1.6/lib/python3.10/site-packages/amptk/DB/ITS_SINTAX.udb 100%
+Reorganizing data in memory 100%
+Creating bitmaps 100%
+Parsing abundances 100%
+173522626 nt in 290642 seqs, min 100, max 6778, avg 597
+Classifying sequences 100%
+Classified 4403 of 5163 sequences (85.28%)
+
+[07/27/23 14:57:20]: SINTAX results parsed, resulting in 4,339 taxonomy predictions
+[07/27/23 14:57:24]: Global alignment results parsed, resulting in 5,163 taxonomy predictions
+[07/27/23 14:57:24]: Combined OTU taxonomy dictionary contains 5,163 taxonomy predictions
+[07/27/23 14:57:24]: Appending taxonomy to OTU table and OTUs
+[07/27/23 14:57:24]: Generating phylogenetic tree (MAFFT/FastTree)
+[07/27/23 14:57:24]: mafft FD_202307_3Pool.filtered.otus.fa
+[07/27/23 14:58:17]: fasttree -nt FD_202307_3Pool.mafft.fasta
+[07/27/23 15:03:22]: Taxonomy finished: FD_202307_3Pool.taxonomy.txt
+[07/27/23 15:03:22]: Classic OTU table with taxonomy: FD_202307_3Pool.otu_table.taxonomy.txt
+[07/27/23 15:03:30]: biom convert -i FD_202307_3Pool.final.txt -o FD_202307_3Pool.biom.tmp --table-type OTU table --to-json
+[07/27/23 15:03:32]: biom add-metadata -i FD_202307_3Pool.biom.tmp -o FD_202307_3Pool.biom --observation-metadata-fp FD_202307_3Pool.qiime.taxonomy.txt --sc-separated taxonomy --output-as-json
+[07/27/23 15:03:34]: BIOM OTU table created: FD_202307_3Pool.biom
+[07/27/23 15:03:34]: OTUs with taxonomy: FD_202307_3Pool.otus.taxonomy.fa
+[07/27/23 15:03:34]: OTU phylogeny: FD_202307_3Pool.tree.phy

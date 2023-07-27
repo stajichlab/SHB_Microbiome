@@ -1,0 +1,13 @@
+[07/27/23 14:56:06]: /opt/linux/rocky/8.x/x86_64/pkgs/amptk/1.6/bin/amptk filter -i FD_202307_3Pool.otu_table.txt -f FD_202307_3Pool.cluster.otus.fa -p 0.005
+
+[07/27/23 14:56:06]: OS: Rocky Linux 8.5, 128 cores, ~ 528 GB RAM. Python: 3.10.0
+[07/27/23 14:56:06]: Python Modules: numpy v1.24.2, pandas v1.5.3, matplotlib v3.7.1, psutil v5.9.4, natsort v8.3.1, biopython v1.81, edlib v1.3.9, biom-format v2.1.14
+[07/27/23 14:56:06]: AMPtk v1.6.0, VSEARCH v2.22.1
+[07/27/23 14:56:06]: Loading OTU table: FD_202307_3Pool.otu_table.txt
+[07/27/23 14:56:06]: OTU table contains 533 samples, 5,236 OTUs, and 16,332,230 reads counts
+[07/27/23 14:56:06]: Sorting OTU table naturally
+[07/27/23 14:56:06]: Removing 73 OTUs according to --min_reads_otu 2
+[07/27/23 14:56:08]: Normalizing OTU table to number of reads per sample
+[07/27/23 14:56:08]: Overwriting auto detect index-bleed, setting to 0.500000%
+[07/27/23 14:56:23]: Filtered OTU table contains 533 samples, 5,163 OTUs, and 16,063,682 read counts
+[07/27/23 14:56:24]: Finding valid OTUs
