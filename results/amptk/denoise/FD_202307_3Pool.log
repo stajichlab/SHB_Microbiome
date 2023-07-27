@@ -1,0 +1,9 @@
+[07/27/23 16:23:40]: /opt/linux/rocky/8.x/x86_64/pkgs/amptk/1.6/bin/amptk funguild -i FD_202307_3Pool.otu_table.taxonomy.txt -o FD_202307_3Pool
+
+[07/27/23 16:23:40]: OS: Rocky Linux 8.5, 16 cores, ~ 132 GB RAM. Python: 3.10.0
+[07/27/23 16:23:40]: Python Modules: numpy v1.24.2, pandas v1.5.3, matplotlib v3.7.1, psutil v5.9.4, natsort v8.3.1, biopython v1.81, edlib v1.3.9, biom-format v2.1.14
+[07/27/23 16:23:40]: Downloading/parsing FUNGuild database from: https://mycoportal.org/fdex/services/api/db_return.php?dbReturn=Yes&pp=1
+[07/27/23 16:23:42]: Assigning functional guilds completed
+[07/27/23 16:23:42]: {'dbsize': 11728, 'trophic-levels': 8, 'guilds': 203, 'classified': {'otus': 5163, 'u': 2662, 'levels': {'Pathotroph-Saprotroph-Symbiotroph': 239, 'Pathotroph-Saprotroph': 476, 'Saprotroph': 788, 'Symbiotroph': 541, 'Pathotroph-Symbiotroph': 65, 'Saprotroph-Symbiotroph': 61, 'Pathotroph': 331}, 'g': 1301, 's': 626, 'f': 549, 'o': 22, 'p': 3}}
+[07/27/23 16:23:42]: FUNGuild databases consists of 11,728 records, 8 trophic-levels, 203 guilds
+[07/27/23 16:23:42]: Trophic-level assignment statistics for 5,163 OTUS
