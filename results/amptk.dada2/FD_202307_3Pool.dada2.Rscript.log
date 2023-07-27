@@ -1,0 +1,1888 @@
+Loading required package: Rcpp
+Loading required package: BiocGenerics
+
+Attaching package: ‘BiocGenerics’
+
+The following objects are masked from ‘package:stats’:
+
+    IQR, mad, sd, var, xtabs
+
+The following objects are masked from ‘package:base’:
+
+    anyDuplicated, aperm, append, as.data.frame, basename, cbind,
+    colnames, dirname, do.call, duplicated, eval, evalq, Filter, Find,
+    get, grep, grepl, intersect, is.unsorted, lapply, Map, mapply,
+    match, mget, order, paste, pmax, pmax.int, pmin, pmin.int,
+    Position, rank, rbind, Reduce, rownames, sapply, setdiff, sort,
+    table, tapply, union, unique, unsplit, which.max, which.min
+
+Loading required package: BiocParallel
+Loading required package: Biostrings
+Loading required package: S4Vectors
+Loading required package: stats4
+
+Attaching package: ‘S4Vectors’
+
+The following objects are masked from ‘package:base’:
+
+    expand.grid, I, unname
+
+Loading required package: IRanges
+Loading required package: XVector
+Loading required package: GenomeInfoDb
+
+Attaching package: ‘Biostrings’
+
+The following object is masked from ‘package:base’:
+
+    strsplit
+
+Loading required package: Rsamtools
+Loading required package: GenomicRanges
+Loading required package: GenomicAlignments
+Loading required package: SummarizedExperiment
+Loading required package: MatrixGenerics
+Loading required package: matrixStats
+
+Attaching package: ‘MatrixGenerics’
+
+The following objects are masked from ‘package:matrixStats’:
+
+    colAlls, colAnyNAs, colAnys, colAvgsPerRowSet, colCollapse,
+    colCounts, colCummaxs, colCummins, colCumprods, colCumsums,
+    colDiffs, colIQRDiffs, colIQRs, colLogSumExps, colMadDiffs,
+    colMads, colMaxs, colMeans2, colMedians, colMins, colOrderStats,
+    colProds, colQuantiles, colRanges, colRanks, colSdDiffs, colSds,
+    colSums2, colTabulates, colVarDiffs, colVars, colWeightedMads,
+    colWeightedMeans, colWeightedMedians, colWeightedSds,
+    colWeightedVars, rowAlls, rowAnyNAs, rowAnys, rowAvgsPerColSet,
+    rowCollapse, rowCounts, rowCummaxs, rowCummins, rowCumprods,
+    rowCumsums, rowDiffs, rowIQRDiffs, rowIQRs, rowLogSumExps,
+    rowMadDiffs, rowMads, rowMaxs, rowMeans2, rowMedians, rowMins,
+    rowOrderStats, rowProds, rowQuantiles, rowRanges, rowRanks,
+    rowSdDiffs, rowSds, rowSums2, rowTabulates, rowVarDiffs, rowVars,
+    rowWeightedMads, rowWeightedMeans, rowWeightedMedians,
+    rowWeightedSds, rowWeightedVars
+
+Loading required package: Biobase
+Welcome to Bioconductor
+
+    Vignettes contain introductory material; view with
+    'browseVignettes()'. To cite Bioconductor, see
+    'citation("Biobase")', and for packages 'citation("pkgname")'.
+
+
+Attaching package: ‘Biobase’
+
+The following object is masked from ‘package:MatrixGenerics’:
+
+    rowMedians
+
+The following objects are masked from ‘package:matrixStats’:
+
+    anyMissing, rowMedians
+
+[1] "-------------"
+[1] "R 4.2.2"
+[1] "base 4.2.2"
+[1] "Biobase 2.58.0"
+[1] "BiocGenerics 0.44.0"
+[1] "BiocParallel 1.32.5"
+[1] "Biostrings 2.66.0"
+[1] "bitops 1.0.7"
+[1] "cli 3.6.1"
+[1] "codetools 0.2.19"
+[1] "colorspace 2.1.0"
+[1] "compiler 4.2.2"
+[1] "crayon 1.5.2"
+[1] "dada2 1.26.0"
+[1] "datasets 4.2.2"
+[1] "DelayedArray 0.24.0"
+[1] "deldir 1.0.6"
+[1] "fansi 1.0.4"
+[1] "GenomeInfoDb 1.34.8"
+[1] "GenomeInfoDbData 1.2.9"
+[1] "GenomicAlignments 1.34.0"
+[1] "GenomicRanges 1.50.0"
+[1] "ggplot2 3.4.1"
+[1] "glue 1.6.2"
+[1] "graphics 4.2.2"
+[1] "grDevices 4.2.2"
+[1] "grid 4.2.2"
+[1] "gtable 0.3.3"
+[1] "hwriter 1.3.2.1"
+[1] "interp 1.1.3"
+[1] "IRanges 2.32.0"
+[1] "jpeg 0.1.10"
+[1] "lattice 0.20.45"
+[1] "latticeExtra 0.6.30"
+[1] "lifecycle 1.0.3"
+[1] "magrittr 2.0.3"
+[1] "Matrix 1.5.3"
+[1] "MatrixGenerics 1.10.0"
+[1] "matrixStats 0.63.0"
+[1] "methods 4.2.2"
+[1] "munsell 0.5.0"
+[1] "parallel 4.2.2"
+[1] "pillar 1.9.0"
+[1] "pkgconfig 2.0.3"
+[1] "plyr 1.8.8"
+[1] "png 0.1.8"
+[1] "R6 2.5.1"
+[1] "RColorBrewer 1.1.3"
+[1] "Rcpp 1.0.10"
+[1] "RcppParallel 5.1.6"
+[1] "RCurl 1.98.1.10"
+[1] "reshape2 1.4.4"
+[1] "rlang 1.1.0"
+[1] "Rsamtools 2.14.0"
+[1] "S4Vectors 0.36.0"
+[1] "scales 1.2.1"
+[1] "ShortRead 1.56.0"
+[1] "stats 4.2.2"
+[1] "stats4 4.2.2"
+[1] "stringi 1.7.12"
+[1] "stringr 1.5.0"
+[1] "SummarizedExperiment 1.28.0"
+[1] "tibble 3.2.1"
+[1] "tools 4.2.2"
+[1] "utf8 1.2.3"
+[1] "utils 4.2.2"
+[1] "vctrs 0.6.1"
+[1] "XVector 0.38.0"
+[1] "zlibbioc 1.44.0"
+[1] "-------------"
+[1] "Loading Data from folder"
+  [1] "FD_202307_3Pool_filtered/SL1501.fastq"
+  [2] "FD_202307_3Pool_filtered/SL1502.fastq"
+  [3] "FD_202307_3Pool_filtered/SL1503.fastq"
+  [4] "FD_202307_3Pool_filtered/SL1504.fastq"
+  [5] "FD_202307_3Pool_filtered/SL1505.fastq"
+  [6] "FD_202307_3Pool_filtered/SL1506.fastq"
+  [7] "FD_202307_3Pool_filtered/SL1507.fastq"
+  [8] "FD_202307_3Pool_filtered/SL1508.fastq"
+  [9] "FD_202307_3Pool_filtered/SL1509.fastq"
+ [10] "FD_202307_3Pool_filtered/SL1510.fastq"
+ [11] "FD_202307_3Pool_filtered/SL1511.fastq"
+ [12] "FD_202307_3Pool_filtered/SL1512.fastq"
+ [13] "FD_202307_3Pool_filtered/SL1513.fastq"
+ [14] "FD_202307_3Pool_filtered/SL1514.fastq"
+ [15] "FD_202307_3Pool_filtered/SL1515.fastq"
+ [16] "FD_202307_3Pool_filtered/SL1516.fastq"
+ [17] "FD_202307_3Pool_filtered/SL1517.fastq"
+ [18] "FD_202307_3Pool_filtered/SL1518.fastq"
+ [19] "FD_202307_3Pool_filtered/SL1519.fastq"
+ [20] "FD_202307_3Pool_filtered/SL1520.fastq"
+ [21] "FD_202307_3Pool_filtered/SL1521.fastq"
+ [22] "FD_202307_3Pool_filtered/SL1522.fastq"
+ [23] "FD_202307_3Pool_filtered/SL1523.fastq"
+ [24] "FD_202307_3Pool_filtered/SL1524.fastq"
+ [25] "FD_202307_3Pool_filtered/SL1525.fastq"
+ [26] "FD_202307_3Pool_filtered/SL1526.fastq"
+ [27] "FD_202307_3Pool_filtered/SL1527.fastq"
+ [28] "FD_202307_3Pool_filtered/SL1528.fastq"
+ [29] "FD_202307_3Pool_filtered/SL1529.fastq"
+ [30] "FD_202307_3Pool_filtered/SL1530.fastq"
+ [31] "FD_202307_3Pool_filtered/SL1531.fastq"
+ [32] "FD_202307_3Pool_filtered/SL1532.fastq"
+ [33] "FD_202307_3Pool_filtered/SL1533.fastq"
+ [34] "FD_202307_3Pool_filtered/SL1534.fastq"
+ [35] "FD_202307_3Pool_filtered/SL1535.fastq"
+ [36] "FD_202307_3Pool_filtered/SL1536.fastq"
+ [37] "FD_202307_3Pool_filtered/SL1537.fastq"
+ [38] "FD_202307_3Pool_filtered/SL1538.fastq"
+ [39] "FD_202307_3Pool_filtered/SL1539.fastq"
+ [40] "FD_202307_3Pool_filtered/SL1540.fastq"
+ [41] "FD_202307_3Pool_filtered/SL1541.fastq"
+ [42] "FD_202307_3Pool_filtered/SL1542.fastq"
+ [43] "FD_202307_3Pool_filtered/SL1543.fastq"
+ [44] "FD_202307_3Pool_filtered/SL1544.fastq"
+ [45] "FD_202307_3Pool_filtered/SL1545.fastq"
+ [46] "FD_202307_3Pool_filtered/SL1546.fastq"
+ [47] "FD_202307_3Pool_filtered/SL1547.fastq"
+ [48] "FD_202307_3Pool_filtered/SL1548.fastq"
+ [49] "FD_202307_3Pool_filtered/SL1549.fastq"
+ [50] "FD_202307_3Pool_filtered/SL1550.fastq"
+ [51] "FD_202307_3Pool_filtered/SL1551.fastq"
+ [52] "FD_202307_3Pool_filtered/SL1552.fastq"
+ [53] "FD_202307_3Pool_filtered/SL1553.fastq"
+ [54] "FD_202307_3Pool_filtered/SL1554.fastq"
+ [55] "FD_202307_3Pool_filtered/SL1555.fastq"
+ [56] "FD_202307_3Pool_filtered/SL1556.fastq"
+ [57] "FD_202307_3Pool_filtered/SL1557.fastq"
+ [58] "FD_202307_3Pool_filtered/SL1558.fastq"
+ [59] "FD_202307_3Pool_filtered/SL1559.fastq"
+ [60] "FD_202307_3Pool_filtered/SL1560.fastq"
+ [61] "FD_202307_3Pool_filtered/SL1561.fastq"
+ [62] "FD_202307_3Pool_filtered/SL1562.fastq"
+ [63] "FD_202307_3Pool_filtered/SL1563.fastq"
+ [64] "FD_202307_3Pool_filtered/SL1564.fastq"
+ [65] "FD_202307_3Pool_filtered/SL1565.fastq"
+ [66] "FD_202307_3Pool_filtered/SL1566.fastq"
+ [67] "FD_202307_3Pool_filtered/SL1567.fastq"
+ [68] "FD_202307_3Pool_filtered/SL1568.fastq"
+ [69] "FD_202307_3Pool_filtered/SL1569.fastq"
+ [70] "FD_202307_3Pool_filtered/SL1570.fastq"
+ [71] "FD_202307_3Pool_filtered/SL1571.fastq"
+ [72] "FD_202307_3Pool_filtered/SL1572.fastq"
+ [73] "FD_202307_3Pool_filtered/SL1573.fastq"
+ [74] "FD_202307_3Pool_filtered/SL1574.fastq"
+ [75] "FD_202307_3Pool_filtered/SL1575.fastq"
+ [76] "FD_202307_3Pool_filtered/SL1576.fastq"
+ [77] "FD_202307_3Pool_filtered/SL1577.fastq"
+ [78] "FD_202307_3Pool_filtered/SL1578.fastq"
+ [79] "FD_202307_3Pool_filtered/SL1579.fastq"
+ [80] "FD_202307_3Pool_filtered/SL1580.fastq"
+ [81] "FD_202307_3Pool_filtered/SL1581.fastq"
+ [82] "FD_202307_3Pool_filtered/SL1582.fastq"
+ [83] "FD_202307_3Pool_filtered/SL1583.fastq"
+ [84] "FD_202307_3Pool_filtered/SL1584.fastq"
+ [85] "FD_202307_3Pool_filtered/SL1585.fastq"
+ [86] "FD_202307_3Pool_filtered/SL1586.fastq"
+ [87] "FD_202307_3Pool_filtered/SL1587.fastq"
+ [88] "FD_202307_3Pool_filtered/SL1588.fastq"
+ [89] "FD_202307_3Pool_filtered/SL1589.fastq"
+ [90] "FD_202307_3Pool_filtered/SL1590.fastq"
+ [91] "FD_202307_3Pool_filtered/SL1591.fastq"
+ [92] "FD_202307_3Pool_filtered/SL1592.fastq"
+ [93] "FD_202307_3Pool_filtered/SL1593.fastq"
+ [94] "FD_202307_3Pool_filtered/SL1594.fastq"
+ [95] "FD_202307_3Pool_filtered/SL1595.fastq"
+ [96] "FD_202307_3Pool_filtered/SL1596.fastq"
+ [97] "FD_202307_3Pool_filtered/SL1597.fastq"
+ [98] "FD_202307_3Pool_filtered/SL1598.fastq"
+ [99] "FD_202307_3Pool_filtered/SL1599.fastq"
+[100] "FD_202307_3Pool_filtered/SL1600.fastq"
+[101] "FD_202307_3Pool_filtered/SL1601.fastq"
+[102] "FD_202307_3Pool_filtered/SL1602.fastq"
+[103] "FD_202307_3Pool_filtered/SL1603.fastq"
+[104] "FD_202307_3Pool_filtered/SL1604.fastq"
+[105] "FD_202307_3Pool_filtered/SL1605.fastq"
+[106] "FD_202307_3Pool_filtered/SL1606.fastq"
+[107] "FD_202307_3Pool_filtered/SL1607.fastq"
+[108] "FD_202307_3Pool_filtered/SL1608.fastq"
+[109] "FD_202307_3Pool_filtered/SL1609.fastq"
+[110] "FD_202307_3Pool_filtered/SL1610.fastq"
+[111] "FD_202307_3Pool_filtered/SL1611.fastq"
+[112] "FD_202307_3Pool_filtered/SL1612.fastq"
+[113] "FD_202307_3Pool_filtered/SL1613.fastq"
+[114] "FD_202307_3Pool_filtered/SL1614.fastq"
+[115] "FD_202307_3Pool_filtered/SL1615.fastq"
+[116] "FD_202307_3Pool_filtered/SL1616.fastq"
+[117] "FD_202307_3Pool_filtered/SL1617.fastq"
+[118] "FD_202307_3Pool_filtered/SL1618.fastq"
+[119] "FD_202307_3Pool_filtered/SL1619.fastq"
+[120] "FD_202307_3Pool_filtered/SL1620.fastq"
+[121] "FD_202307_3Pool_filtered/SL1621.fastq"
+[122] "FD_202307_3Pool_filtered/SL1622.fastq"
+[123] "FD_202307_3Pool_filtered/SL1623.fastq"
+[124] "FD_202307_3Pool_filtered/SL1624.fastq"
+[125] "FD_202307_3Pool_filtered/SL1626.fastq"
+[126] "FD_202307_3Pool_filtered/SL1627.fastq"
+[127] "FD_202307_3Pool_filtered/SL1628.fastq"
+[128] "FD_202307_3Pool_filtered/SL1629.fastq"
+[129] "FD_202307_3Pool_filtered/SL1630.fastq"
+[130] "FD_202307_3Pool_filtered/SL1631.fastq"
+[131] "FD_202307_3Pool_filtered/SL1632.fastq"
+[132] "FD_202307_3Pool_filtered/SL1633.fastq"
+[133] "FD_202307_3Pool_filtered/SL1634.fastq"
+[134] "FD_202307_3Pool_filtered/SL1635.fastq"
+[135] "FD_202307_3Pool_filtered/SL1636.fastq"
+[136] "FD_202307_3Pool_filtered/SL1637.fastq"
+[137] "FD_202307_3Pool_filtered/SL1638.fastq"
+[138] "FD_202307_3Pool_filtered/SL1639.fastq"
+[139] "FD_202307_3Pool_filtered/SL1640.fastq"
+[140] "FD_202307_3Pool_filtered/SL1641.fastq"
+[141] "FD_202307_3Pool_filtered/SL1642.fastq"
+[142] "FD_202307_3Pool_filtered/SL1643.fastq"
+[143] "FD_202307_3Pool_filtered/SL1645.fastq"
+[144] "FD_202307_3Pool_filtered/SL1646.fastq"
+[145] "FD_202307_3Pool_filtered/SL1648.fastq"
+[146] "FD_202307_3Pool_filtered/SL1649.fastq"
+[147] "FD_202307_3Pool_filtered/SL1650.fastq"
+[148] "FD_202307_3Pool_filtered/SL1651.fastq"
+[149] "FD_202307_3Pool_filtered/SL1652.fastq"
+[150] "FD_202307_3Pool_filtered/SL1653.fastq"
+[151] "FD_202307_3Pool_filtered/SL1654.fastq"
+[152] "FD_202307_3Pool_filtered/SL1656.fastq"
+[153] "FD_202307_3Pool_filtered/SL1657.fastq"
+[154] "FD_202307_3Pool_filtered/SL1658.fastq"
+[155] "FD_202307_3Pool_filtered/SL1659.fastq"
+[156] "FD_202307_3Pool_filtered/SL1660.fastq"
+[157] "FD_202307_3Pool_filtered/SL1661.fastq"
+[158] "FD_202307_3Pool_filtered/SL1662.fastq"
+[159] "FD_202307_3Pool_filtered/SL1663.fastq"
+[160] "FD_202307_3Pool_filtered/SL1664.fastq"
+[161] "FD_202307_3Pool_filtered/SL1665.fastq"
+[162] "FD_202307_3Pool_filtered/SL1666.fastq"
+[163] "FD_202307_3Pool_filtered/SL1667.fastq"
+[164] "FD_202307_3Pool_filtered/SL1668.fastq"
+[165] "FD_202307_3Pool_filtered/SL1669.fastq"
+[166] "FD_202307_3Pool_filtered/SL1670.fastq"
+[167] "FD_202307_3Pool_filtered/SL1671.fastq"
+[168] "FD_202307_3Pool_filtered/SL1672.fastq"
+[169] "FD_202307_3Pool_filtered/SL1673.fastq"
+[170] "FD_202307_3Pool_filtered/SL1674.fastq"
+[171] "FD_202307_3Pool_filtered/SL1675.fastq"
+[172] "FD_202307_3Pool_filtered/SL1676.fastq"
+[173] "FD_202307_3Pool_filtered/SL1677.fastq"
+[174] "FD_202307_3Pool_filtered/SL1678.fastq"
+[175] "FD_202307_3Pool_filtered/SL1679.fastq"
+[176] "FD_202307_3Pool_filtered/SL1680.fastq"
+[177] "FD_202307_3Pool_filtered/SL1681.fastq"
+[178] "FD_202307_3Pool_filtered/SL1682.fastq"
+[179] "FD_202307_3Pool_filtered/SL1683.fastq"
+[180] "FD_202307_3Pool_filtered/SL1684.fastq"
+[181] "FD_202307_3Pool_filtered/SL1685.fastq"
+[182] "FD_202307_3Pool_filtered/SL1686.fastq"
+[183] "FD_202307_3Pool_filtered/SL1687.fastq"
+[184] "FD_202307_3Pool_filtered/SL1688.fastq"
+[185] "FD_202307_3Pool_filtered/SL1689.fastq"
+[186] "FD_202307_3Pool_filtered/SL1690.fastq"
+[187] "FD_202307_3Pool_filtered/SL1691.fastq"
+[188] "FD_202307_3Pool_filtered/SL1692.fastq"
+[189] "FD_202307_3Pool_filtered/SL1693.fastq"
+[190] "FD_202307_3Pool_filtered/SL1694.fastq"
+[191] "FD_202307_3Pool_filtered/SL1695.fastq"
+[192] "FD_202307_3Pool_filtered/SL1696.fastq"
+[193] "FD_202307_3Pool_filtered/SL1697.fastq"
+[194] "FD_202307_3Pool_filtered/SL1698.fastq"
+[195] "FD_202307_3Pool_filtered/SL1699.fastq"
+[196] "FD_202307_3Pool_filtered/SL1700.fastq"
+[197] "FD_202307_3Pool_filtered/SL1701.fastq"
+[198] "FD_202307_3Pool_filtered/SL1702.fastq"
+[199] "FD_202307_3Pool_filtered/SL1703.fastq"
+[200] "FD_202307_3Pool_filtered/SL1704.fastq"
+[201] "FD_202307_3Pool_filtered/SL1705.fastq"
+[202] "FD_202307_3Pool_filtered/SL1706.fastq"
+[203] "FD_202307_3Pool_filtered/SL1707.fastq"
+[204] "FD_202307_3Pool_filtered/SL1708.fastq"
+[205] "FD_202307_3Pool_filtered/SL1709.fastq"
+[206] "FD_202307_3Pool_filtered/SL1710.fastq"
+[207] "FD_202307_3Pool_filtered/SL1711.fastq"
+[208] "FD_202307_3Pool_filtered/SL1712.fastq"
+[209] "FD_202307_3Pool_filtered/SL1713.fastq"
+[210] "FD_202307_3Pool_filtered/SL1714.fastq"
+[211] "FD_202307_3Pool_filtered/SL1715.fastq"
+[212] "FD_202307_3Pool_filtered/SL1716.fastq"
+[213] "FD_202307_3Pool_filtered/SL1717.fastq"
+[214] "FD_202307_3Pool_filtered/SL1718.fastq"
+[215] "FD_202307_3Pool_filtered/SL1719.fastq"
+[216] "FD_202307_3Pool_filtered/SL1720.fastq"
+[217] "FD_202307_3Pool_filtered/SL1721.fastq"
+[218] "FD_202307_3Pool_filtered/SL1722.fastq"
+[219] "FD_202307_3Pool_filtered/SL1723.fastq"
+[220] "FD_202307_3Pool_filtered/SL1724.fastq"
+[221] "FD_202307_3Pool_filtered/SL1725.fastq"
+[222] "FD_202307_3Pool_filtered/SL1726.fastq"
+[223] "FD_202307_3Pool_filtered/SL1727.fastq"
+[224] "FD_202307_3Pool_filtered/SL1728.fastq"
+[225] "FD_202307_3Pool_filtered/SL1729.fastq"
+[226] "FD_202307_3Pool_filtered/SL1730.fastq"
+[227] "FD_202307_3Pool_filtered/SL1731.fastq"
+[228] "FD_202307_3Pool_filtered/SL1732.fastq"
+[229] "FD_202307_3Pool_filtered/SL1733.fastq"
+[230] "FD_202307_3Pool_filtered/SL1734.fastq"
+[231] "FD_202307_3Pool_filtered/SL1735.fastq"
+[232] "FD_202307_3Pool_filtered/SL1736.fastq"
+[233] "FD_202307_3Pool_filtered/SL1737.fastq"
+[234] "FD_202307_3Pool_filtered/SL1738.fastq"
+[235] "FD_202307_3Pool_filtered/SL1739.fastq"
+[236] "FD_202307_3Pool_filtered/SL1740.fastq"
+[237] "FD_202307_3Pool_filtered/SL1741.fastq"
+[238] "FD_202307_3Pool_filtered/SL1742.fastq"
+[239] "FD_202307_3Pool_filtered/SL1743.fastq"
+[240] "FD_202307_3Pool_filtered/SL1744.fastq"
+[241] "FD_202307_3Pool_filtered/SL1745.fastq"
+[242] "FD_202307_3Pool_filtered/SL1746.fastq"
+[243] "FD_202307_3Pool_filtered/SL1747.fastq"
+[244] "FD_202307_3Pool_filtered/SL1748.fastq"
+[245] "FD_202307_3Pool_filtered/SL1749.fastq"
+[246] "FD_202307_3Pool_filtered/SL1750.fastq"
+[247] "FD_202307_3Pool_filtered/SL1751.fastq"
+[248] "FD_202307_3Pool_filtered/SL1752.fastq"
+[249] "FD_202307_3Pool_filtered/SL1753.fastq"
+[250] "FD_202307_3Pool_filtered/SL1754.fastq"
+[251] "FD_202307_3Pool_filtered/SL1755.fastq"
+[252] "FD_202307_3Pool_filtered/SL1756.fastq"
+[253] "FD_202307_3Pool_filtered/SL1757.fastq"
+[254] "FD_202307_3Pool_filtered/SL1758.fastq"
+[255] "FD_202307_3Pool_filtered/SL1759.fastq"
+[256] "FD_202307_3Pool_filtered/SL1760.fastq"
+[257] "FD_202307_3Pool_filtered/SL1761.fastq"
+[258] "FD_202307_3Pool_filtered/SL1762.fastq"
+[259] "FD_202307_3Pool_filtered/SL1763.fastq"
+[260] "FD_202307_3Pool_filtered/SL1764.fastq"
+[261] "FD_202307_3Pool_filtered/SL1765.fastq"
+[262] "FD_202307_3Pool_filtered/SL1766.fastq"
+[263] "FD_202307_3Pool_filtered/SL1767.fastq"
+[264] "FD_202307_3Pool_filtered/SL1768.fastq"
+[265] "FD_202307_3Pool_filtered/SL1769.fastq"
+[266] "FD_202307_3Pool_filtered/SL1770.fastq"
+[267] "FD_202307_3Pool_filtered/SL1771.fastq"
+[268] "FD_202307_3Pool_filtered/SL1772.fastq"
+[269] "FD_202307_3Pool_filtered/SL1773.fastq"
+[270] "FD_202307_3Pool_filtered/SL1774.fastq"
+[271] "FD_202307_3Pool_filtered/SL1775.fastq"
+[272] "FD_202307_3Pool_filtered/SL1776.fastq"
+[273] "FD_202307_3Pool_filtered/SL1777.fastq"
+[274] "FD_202307_3Pool_filtered/SL1778.fastq"
+[275] "FD_202307_3Pool_filtered/SL1779.fastq"
+[276] "FD_202307_3Pool_filtered/SL1780.fastq"
+[277] "FD_202307_3Pool_filtered/SL1781.fastq"
+[278] "FD_202307_3Pool_filtered/SL1782.fastq"
+[279] "FD_202307_3Pool_filtered/SL1783.fastq"
+[280] "FD_202307_3Pool_filtered/SL1784.fastq"
+[281] "FD_202307_3Pool_filtered/SL1785.fastq"
+[282] "FD_202307_3Pool_filtered/SL1786.fastq"
+[283] "FD_202307_3Pool_filtered/SL1787.fastq"
+[284] "FD_202307_3Pool_filtered/SL1788.fastq"
+[285] "FD_202307_3Pool_filtered/SL1789.fastq"
+[286] "FD_202307_3Pool_filtered/SL1790.fastq"
+[287] "FD_202307_3Pool_filtered/SL1791.fastq"
+[288] "FD_202307_3Pool_filtered/SL1792.fastq"
+[289] "FD_202307_3Pool_filtered/SL1793.fastq"
+[290] "FD_202307_3Pool_filtered/SL1794.fastq"
+[291] "FD_202307_3Pool_filtered/SL1795.fastq"
+[292] "FD_202307_3Pool_filtered/SL1796.fastq"
+[293] "FD_202307_3Pool_filtered/SL1797.fastq"
+[294] "FD_202307_3Pool_filtered/SL1798.fastq"
+[295] "FD_202307_3Pool_filtered/SL1799.fastq"
+[296] "FD_202307_3Pool_filtered/SL1800.fastq"
+[297] "FD_202307_3Pool_filtered/SL1801.fastq"
+[298] "FD_202307_3Pool_filtered/SL1802.fastq"
+[299] "FD_202307_3Pool_filtered/SL1803.fastq"
+[300] "FD_202307_3Pool_filtered/SL1804.fastq"
+[301] "FD_202307_3Pool_filtered/SL1805.fastq"
+[302] "FD_202307_3Pool_filtered/SL1806.fastq"
+[303] "FD_202307_3Pool_filtered/SL1807.fastq"
+[304] "FD_202307_3Pool_filtered/SL1808.fastq"
+[305] "FD_202307_3Pool_filtered/SL1809.fastq"
+[306] "FD_202307_3Pool_filtered/SL1810.fastq"
+[307] "FD_202307_3Pool_filtered/SL1811.fastq"
+[308] "FD_202307_3Pool_filtered/SL1812.fastq"
+[309] "FD_202307_3Pool_filtered/SL1813.fastq"
+[310] "FD_202307_3Pool_filtered/SL1814.fastq"
+[311] "FD_202307_3Pool_filtered/SL1815.fastq"
+[312] "FD_202307_3Pool_filtered/SL1816.fastq"
+[313] "FD_202307_3Pool_filtered/SL1817.fastq"
+[314] "FD_202307_3Pool_filtered/SL1818.fastq"
+[315] "FD_202307_3Pool_filtered/SL1819.fastq"
+[316] "FD_202307_3Pool_filtered/SL1820.fastq"
+[317] "FD_202307_3Pool_filtered/SL1821.fastq"
+[318] "FD_202307_3Pool_filtered/SL1822.fastq"
+[319] "FD_202307_3Pool_filtered/SL1823.fastq"
+[320] "FD_202307_3Pool_filtered/SL1824.fastq"
+[321] "FD_202307_3Pool_filtered/SL1825.fastq"
+[322] "FD_202307_3Pool_filtered/SL1826.fastq"
+[323] "FD_202307_3Pool_filtered/SL1827.fastq"
+[324] "FD_202307_3Pool_filtered/SL1828.fastq"
+[325] "FD_202307_3Pool_filtered/SL1829.fastq"
+[326] "FD_202307_3Pool_filtered/SL1830.fastq"
+[327] "FD_202307_3Pool_filtered/SL1831.fastq"
+[328] "FD_202307_3Pool_filtered/SL1832.fastq"
+[329] "FD_202307_3Pool_filtered/SL1833.fastq"
+[330] "FD_202307_3Pool_filtered/SL1834.fastq"
+[331] "FD_202307_3Pool_filtered/SL1835.fastq"
+[332] "FD_202307_3Pool_filtered/SL1836.fastq"
+[333] "FD_202307_3Pool_filtered/SL1837.fastq"
+[334] "FD_202307_3Pool_filtered/SL1838.fastq"
+[335] "FD_202307_3Pool_filtered/SL1839.fastq"
+[336] "FD_202307_3Pool_filtered/SL1840.fastq"
+[337] "FD_202307_3Pool_filtered/SL1841.fastq"
+[338] "FD_202307_3Pool_filtered/SL1842.fastq"
+[339] "FD_202307_3Pool_filtered/SL1843.fastq"
+[340] "FD_202307_3Pool_filtered/SL1844.fastq"
+[341] "FD_202307_3Pool_filtered/SL1845.fastq"
+[342] "FD_202307_3Pool_filtered/SL1846.fastq"
+[343] "FD_202307_3Pool_filtered/SL1847.fastq"
+[344] "FD_202307_3Pool_filtered/SL1848.fastq"
+[345] "FD_202307_3Pool_filtered/SL1849.fastq"
+[346] "FD_202307_3Pool_filtered/SL1850.fastq"
+[347] "FD_202307_3Pool_filtered/SL1851.fastq"
+[348] "FD_202307_3Pool_filtered/SL1852.fastq"
+[349] "FD_202307_3Pool_filtered/SL1853.fastq"
+[350] "FD_202307_3Pool_filtered/SL1854.fastq"
+[351] "FD_202307_3Pool_filtered/SL1855.fastq"
+[352] "FD_202307_3Pool_filtered/SL1856.fastq"
+[353] "FD_202307_3Pool_filtered/SL1857.fastq"
+[354] "FD_202307_3Pool_filtered/SL1858.fastq"
+[355] "FD_202307_3Pool_filtered/SL1859.fastq"
+[356] "FD_202307_3Pool_filtered/SL1860.fastq"
+[357] "FD_202307_3Pool_filtered/SL1861.fastq"
+[358] "FD_202307_3Pool_filtered/SL1862.fastq"
+[359] "FD_202307_3Pool_filtered/SL1863.fastq"
+[360] "FD_202307_3Pool_filtered/SL1864.fastq"
+[361] "FD_202307_3Pool_filtered/SL1865.fastq"
+[362] "FD_202307_3Pool_filtered/SL1866.fastq"
+[363] "FD_202307_3Pool_filtered/SL1867.fastq"
+[364] "FD_202307_3Pool_filtered/SL1868.fastq"
+[365] "FD_202307_3Pool_filtered/SL1869.fastq"
+[366] "FD_202307_3Pool_filtered/SL1870.fastq"
+[367] "FD_202307_3Pool_filtered/SL1871.fastq"
+[368] "FD_202307_3Pool_filtered/SL1872.fastq"
+[369] "FD_202307_3Pool_filtered/SL1873.fastq"
+[370] "FD_202307_3Pool_filtered/SL1874.fastq"
+[371] "FD_202307_3Pool_filtered/SL1875.fastq"
+[372] "FD_202307_3Pool_filtered/SL1876.fastq"
+[373] "FD_202307_3Pool_filtered/SL1877.fastq"
+[374] "FD_202307_3Pool_filtered/SL1878.fastq"
+[375] "FD_202307_3Pool_filtered/SL1879.fastq"
+[376] "FD_202307_3Pool_filtered/SL1880.fastq"
+[377] "FD_202307_3Pool_filtered/SL1881.fastq"
+[378] "FD_202307_3Pool_filtered/SL1882.fastq"
+[379] "FD_202307_3Pool_filtered/SL1883.fastq"
+[380] "FD_202307_3Pool_filtered/SL1884.fastq"
+[381] "FD_202307_3Pool_filtered/SL1885.fastq"
+[382] "FD_202307_3Pool_filtered/SL1886.fastq"
+[383] "FD_202307_3Pool_filtered/SL1887.fastq"
+[384] "FD_202307_3Pool_filtered/SL1888.fastq"
+[385] "FD_202307_3Pool_filtered/SL1889.fastq"
+[386] "FD_202307_3Pool_filtered/SL1890.fastq"
+[387] "FD_202307_3Pool_filtered/SL1891.fastq"
+[388] "FD_202307_3Pool_filtered/SL1892.fastq"
+[389] "FD_202307_3Pool_filtered/SL1893.fastq"
+[390] "FD_202307_3Pool_filtered/SL1894.fastq"
+[391] "FD_202307_3Pool_filtered/SL1895.fastq"
+[392] "FD_202307_3Pool_filtered/SL1896.fastq"
+[393] "FD_202307_3Pool_filtered/SL1897.fastq"
+[394] "FD_202307_3Pool_filtered/SL1898.fastq"
+[395] "FD_202307_3Pool_filtered/SL1899.fastq"
+[396] "FD_202307_3Pool_filtered/SL1900.fastq"
+[397] "FD_202307_3Pool_filtered/SL1901.fastq"
+[398] "FD_202307_3Pool_filtered/SL1902.fastq"
+[399] "FD_202307_3Pool_filtered/SL1903.fastq"
+[400] "FD_202307_3Pool_filtered/SL1904.fastq"
+[401] "FD_202307_3Pool_filtered/SL1905.fastq"
+[402] "FD_202307_3Pool_filtered/SL1906.fastq"
+[403] "FD_202307_3Pool_filtered/SL1907.fastq"
+[404] "FD_202307_3Pool_filtered/SL1908.fastq"
+[405] "FD_202307_3Pool_filtered/SL1909.fastq"
+[406] "FD_202307_3Pool_filtered/SL1910.fastq"
+[407] "FD_202307_3Pool_filtered/SL1911.fastq"
+[408] "FD_202307_3Pool_filtered/SL1912.fastq"
+[409] "FD_202307_3Pool_filtered/SL1913.fastq"
+[410] "FD_202307_3Pool_filtered/SL1914.fastq"
+[411] "FD_202307_3Pool_filtered/SL1915.fastq"
+[412] "FD_202307_3Pool_filtered/SL1917.fastq"
+[413] "FD_202307_3Pool_filtered/SL1918.fastq"
+[414] "FD_202307_3Pool_filtered/SL1919.fastq"
+[415] "FD_202307_3Pool_filtered/SL1920.fastq"
+[416] "FD_202307_3Pool_filtered/SL1921.fastq"
+[417] "FD_202307_3Pool_filtered/SL1922.fastq"
+[418] "FD_202307_3Pool_filtered/SL1923.fastq"
+[419] "FD_202307_3Pool_filtered/SL1924.fastq"
+[420] "FD_202307_3Pool_filtered/SL1925.fastq"
+[421] "FD_202307_3Pool_filtered/SL1926.fastq"
+[422] "FD_202307_3Pool_filtered/SL1927.fastq"
+[423] "FD_202307_3Pool_filtered/SL1928.fastq"
+[424] "FD_202307_3Pool_filtered/SL1929.fastq"
+[425] "FD_202307_3Pool_filtered/SL1930.fastq"
+[426] "FD_202307_3Pool_filtered/SL1931.fastq"
+[427] "FD_202307_3Pool_filtered/SL1932.fastq"
+[428] "FD_202307_3Pool_filtered/SL1933.fastq"
+[429] "FD_202307_3Pool_filtered/SL1934.fastq"
+[430] "FD_202307_3Pool_filtered/SL1935.fastq"
+[431] "FD_202307_3Pool_filtered/SL1937.fastq"
+[432] "FD_202307_3Pool_filtered/SL1938.fastq"
+[433] "FD_202307_3Pool_filtered/SL1939.fastq"
+[434] "FD_202307_3Pool_filtered/SL1940.fastq"
+[435] "FD_202307_3Pool_filtered/SL1941.fastq"
+[436] "FD_202307_3Pool_filtered/SL1942.fastq"
+[437] "FD_202307_3Pool_filtered/SL1943.fastq"
+[438] "FD_202307_3Pool_filtered/SL1944.fastq"
+[439] "FD_202307_3Pool_filtered/SL1945.fastq"
+[440] "FD_202307_3Pool_filtered/SL1946.fastq"
+[441] "FD_202307_3Pool_filtered/SL1947.fastq"
+[442] "FD_202307_3Pool_filtered/SL1948.fastq"
+[443] "FD_202307_3Pool_filtered/SL1949.fastq"
+[444] "FD_202307_3Pool_filtered/SL1950.fastq"
+[445] "FD_202307_3Pool_filtered/SL1951.fastq"
+[446] "FD_202307_3Pool_filtered/SL1952.fastq"
+[447] "FD_202307_3Pool_filtered/SL1953.fastq"
+[448] "FD_202307_3Pool_filtered/SL1954.fastq"
+[449] "FD_202307_3Pool_filtered/SL1955.fastq"
+[450] "FD_202307_3Pool_filtered/SL1956.fastq"
+[451] "FD_202307_3Pool_filtered/SL1957.fastq"
+[452] "FD_202307_3Pool_filtered/SL1958.fastq"
+[453] "FD_202307_3Pool_filtered/SL1959.fastq"
+[454] "FD_202307_3Pool_filtered/SL1960.fastq"
+[455] "FD_202307_3Pool_filtered/SL1961.fastq"
+[456] "FD_202307_3Pool_filtered/SL1962.fastq"
+[457] "FD_202307_3Pool_filtered/SL1963.fastq"
+[458] "FD_202307_3Pool_filtered/SL1964.fastq"
+[459] "FD_202307_3Pool_filtered/SL1965.fastq"
+[460] "FD_202307_3Pool_filtered/SL1966.fastq"
+[461] "FD_202307_3Pool_filtered/SL1967.fastq"
+[462] "FD_202307_3Pool_filtered/SL1968.fastq"
+[463] "FD_202307_3Pool_filtered/SL1969.fastq"
+[464] "FD_202307_3Pool_filtered/SL1970.fastq"
+[465] "FD_202307_3Pool_filtered/SL1971.fastq"
+[466] "FD_202307_3Pool_filtered/SL1972.fastq"
+[467] "FD_202307_3Pool_filtered/SL1973.fastq"
+[468] "FD_202307_3Pool_filtered/SL1974.fastq"
+[469] "FD_202307_3Pool_filtered/SL1975.fastq"
+[470] "FD_202307_3Pool_filtered/SL1976.fastq"
+[471] "FD_202307_3Pool_filtered/SL1977.fastq"
+[472] "FD_202307_3Pool_filtered/SL1978.fastq"
+[473] "FD_202307_3Pool_filtered/SL1979.fastq"
+[474] "FD_202307_3Pool_filtered/SL1980.fastq"
+[475] "FD_202307_3Pool_filtered/SL1981.fastq"
+[476] "FD_202307_3Pool_filtered/SL1982.fastq"
+[477] "FD_202307_3Pool_filtered/SL1983.fastq"
+[478] "FD_202307_3Pool_filtered/SL1984.fastq"
+[479] "FD_202307_3Pool_filtered/SL1985.fastq"
+[480] "FD_202307_3Pool_filtered/SL1986.fastq"
+[481] "FD_202307_3Pool_filtered/SL1987.fastq"
+[482] "FD_202307_3Pool_filtered/SL1988.fastq"
+[483] "FD_202307_3Pool_filtered/SL1989.fastq"
+[484] "FD_202307_3Pool_filtered/SL1990.fastq"
+[485] "FD_202307_3Pool_filtered/SL1991.fastq"
+[486] "FD_202307_3Pool_filtered/SL1992.fastq"
+[487] "FD_202307_3Pool_filtered/SL1993.fastq"
+[488] "FD_202307_3Pool_filtered/SL1994.fastq"
+[489] "FD_202307_3Pool_filtered/SL1995.fastq"
+[490] "FD_202307_3Pool_filtered/SL1996.fastq"
+[491] "FD_202307_3Pool_filtered/SL1997.fastq"
+[492] "FD_202307_3Pool_filtered/SL1998.fastq"
+[493] "FD_202307_3Pool_filtered/SL1999.fastq"
+[494] "FD_202307_3Pool_filtered/SL2000.fastq"
+[495] "FD_202307_3Pool_filtered/SL2001.fastq"
+[496] "FD_202307_3Pool_filtered/SL2002.fastq"
+[497] "FD_202307_3Pool_filtered/SL2003.fastq"
+[498] "FD_202307_3Pool_filtered/SL2004.fastq"
+[499] "FD_202307_3Pool_filtered/SL2005.fastq"
+[500] "FD_202307_3Pool_filtered/SL2006.fastq"
+[501] "FD_202307_3Pool_filtered/SL2007.fastq"
+[502] "FD_202307_3Pool_filtered/SL2008.fastq"
+[503] "FD_202307_3Pool_filtered/SL2009.fastq"
+[504] "FD_202307_3Pool_filtered/SL2010.fastq"
+[505] "FD_202307_3Pool_filtered/SL2011.fastq"
+[506] "FD_202307_3Pool_filtered/SL2012.fastq"
+[507] "FD_202307_3Pool_filtered/SL2013.fastq"
+[508] "FD_202307_3Pool_filtered/SL2014.fastq"
+[509] "FD_202307_3Pool_filtered/SL2015.fastq"
+[510] "FD_202307_3Pool_filtered/SL2016.fastq"
+[511] "FD_202307_3Pool_filtered/SL2017.fastq"
+[512] "FD_202307_3Pool_filtered/SL2018.fastq"
+[513] "FD_202307_3Pool_filtered/SL2019.fastq"
+[514] "FD_202307_3Pool_filtered/SL2020.fastq"
+[515] "FD_202307_3Pool_filtered/SL2021.fastq"
+[516] "FD_202307_3Pool_filtered/SL2022.fastq"
+[517] "FD_202307_3Pool_filtered/SL2023.fastq"
+[518] "FD_202307_3Pool_filtered/SL2024.fastq"
+[519] "FD_202307_3Pool_filtered/SL2025.fastq"
+[520] "FD_202307_3Pool_filtered/SLP2W.fastq" 
+[521] "FD_202307_3Pool_filtered/SLPW1B.fastq"
+[522] "FD_202307_3Pool_filtered/SLPW3A.fastq"
+[523] "FD_202307_3Pool_filtered/SLPW4A.fastq"
+[524] "FD_202307_3Pool_filtered/SLPW5X.fastq"
+[525] "FD_202307_3Pool_filtered/SLPW6A.fastq"
+[526] "FD_202307_3Pool_filtered/SLPW7.fastq" 
+[527] "FD_202307_3Pool_filtered/SLPW8.fastq" 
+  [1] "SL1501" "SL1502" "SL1503" "SL1504" "SL1505" "SL1506" "SL1507" "SL1508"
+  [9] "SL1509" "SL1510" "SL1511" "SL1512" "SL1513" "SL1514" "SL1515" "SL1516"
+ [17] "SL1517" "SL1518" "SL1519" "SL1520" "SL1521" "SL1522" "SL1523" "SL1524"
+ [25] "SL1525" "SL1526" "SL1527" "SL1528" "SL1529" "SL1530" "SL1531" "SL1532"
+ [33] "SL1533" "SL1534" "SL1535" "SL1536" "SL1537" "SL1538" "SL1539" "SL1540"
+ [41] "SL1541" "SL1542" "SL1543" "SL1544" "SL1545" "SL1546" "SL1547" "SL1548"
+ [49] "SL1549" "SL1550" "SL1551" "SL1552" "SL1553" "SL1554" "SL1555" "SL1556"
+ [57] "SL1557" "SL1558" "SL1559" "SL1560" "SL1561" "SL1562" "SL1563" "SL1564"
+ [65] "SL1565" "SL1566" "SL1567" "SL1568" "SL1569" "SL1570" "SL1571" "SL1572"
+ [73] "SL1573" "SL1574" "SL1575" "SL1576" "SL1577" "SL1578" "SL1579" "SL1580"
+ [81] "SL1581" "SL1582" "SL1583" "SL1584" "SL1585" "SL1586" "SL1587" "SL1588"
+ [89] "SL1589" "SL1590" "SL1591" "SL1592" "SL1593" "SL1594" "SL1595" "SL1596"
+ [97] "SL1597" "SL1598" "SL1599" "SL1600" "SL1601" "SL1602" "SL1603" "SL1604"
+[105] "SL1605" "SL1606" "SL1607" "SL1608" "SL1609" "SL1610" "SL1611" "SL1612"
+[113] "SL1613" "SL1614" "SL1615" "SL1616" "SL1617" "SL1618" "SL1619" "SL1620"
+[121] "SL1621" "SL1622" "SL1623" "SL1624" "SL1626" "SL1627" "SL1628" "SL1629"
+[129] "SL1630" "SL1631" "SL1632" "SL1633" "SL1634" "SL1635" "SL1636" "SL1637"
+[137] "SL1638" "SL1639" "SL1640" "SL1641" "SL1642" "SL1643" "SL1645" "SL1646"
+[145] "SL1648" "SL1649" "SL1650" "SL1651" "SL1652" "SL1653" "SL1654" "SL1656"
+[153] "SL1657" "SL1658" "SL1659" "SL1660" "SL1661" "SL1662" "SL1663" "SL1664"
+[161] "SL1665" "SL1666" "SL1667" "SL1668" "SL1669" "SL1670" "SL1671" "SL1672"
+[169] "SL1673" "SL1674" "SL1675" "SL1676" "SL1677" "SL1678" "SL1679" "SL1680"
+[177] "SL1681" "SL1682" "SL1683" "SL1684" "SL1685" "SL1686" "SL1687" "SL1688"
+[185] "SL1689" "SL1690" "SL1691" "SL1692" "SL1693" "SL1694" "SL1695" "SL1696"
+[193] "SL1697" "SL1698" "SL1699" "SL1700" "SL1701" "SL1702" "SL1703" "SL1704"
+[201] "SL1705" "SL1706" "SL1707" "SL1708" "SL1709" "SL1710" "SL1711" "SL1712"
+[209] "SL1713" "SL1714" "SL1715" "SL1716" "SL1717" "SL1718" "SL1719" "SL1720"
+[217] "SL1721" "SL1722" "SL1723" "SL1724" "SL1725" "SL1726" "SL1727" "SL1728"
+[225] "SL1729" "SL1730" "SL1731" "SL1732" "SL1733" "SL1734" "SL1735" "SL1736"
+[233] "SL1737" "SL1738" "SL1739" "SL1740" "SL1741" "SL1742" "SL1743" "SL1744"
+[241] "SL1745" "SL1746" "SL1747" "SL1748" "SL1749" "SL1750" "SL1751" "SL1752"
+[249] "SL1753" "SL1754" "SL1755" "SL1756" "SL1757" "SL1758" "SL1759" "SL1760"
+[257] "SL1761" "SL1762" "SL1763" "SL1764" "SL1765" "SL1766" "SL1767" "SL1768"
+[265] "SL1769" "SL1770" "SL1771" "SL1772" "SL1773" "SL1774" "SL1775" "SL1776"
+[273] "SL1777" "SL1778" "SL1779" "SL1780" "SL1781" "SL1782" "SL1783" "SL1784"
+[281] "SL1785" "SL1786" "SL1787" "SL1788" "SL1789" "SL1790" "SL1791" "SL1792"
+[289] "SL1793" "SL1794" "SL1795" "SL1796" "SL1797" "SL1798" "SL1799" "SL1800"
+[297] "SL1801" "SL1802" "SL1803" "SL1804" "SL1805" "SL1806" "SL1807" "SL1808"
+[305] "SL1809" "SL1810" "SL1811" "SL1812" "SL1813" "SL1814" "SL1815" "SL1816"
+[313] "SL1817" "SL1818" "SL1819" "SL1820" "SL1821" "SL1822" "SL1823" "SL1824"
+[321] "SL1825" "SL1826" "SL1827" "SL1828" "SL1829" "SL1830" "SL1831" "SL1832"
+[329] "SL1833" "SL1834" "SL1835" "SL1836" "SL1837" "SL1838" "SL1839" "SL1840"
+[337] "SL1841" "SL1842" "SL1843" "SL1844" "SL1845" "SL1846" "SL1847" "SL1848"
+[345] "SL1849" "SL1850" "SL1851" "SL1852" "SL1853" "SL1854" "SL1855" "SL1856"
+[353] "SL1857" "SL1858" "SL1859" "SL1860" "SL1861" "SL1862" "SL1863" "SL1864"
+[361] "SL1865" "SL1866" "SL1867" "SL1868" "SL1869" "SL1870" "SL1871" "SL1872"
+[369] "SL1873" "SL1874" "SL1875" "SL1876" "SL1877" "SL1878" "SL1879" "SL1880"
+[377] "SL1881" "SL1882" "SL1883" "SL1884" "SL1885" "SL1886" "SL1887" "SL1888"
+[385] "SL1889" "SL1890" "SL1891" "SL1892" "SL1893" "SL1894" "SL1895" "SL1896"
+[393] "SL1897" "SL1898" "SL1899" "SL1900" "SL1901" "SL1902" "SL1903" "SL1904"
+[401] "SL1905" "SL1906" "SL1907" "SL1908" "SL1909" "SL1910" "SL1911" "SL1912"
+[409] "SL1913" "SL1914" "SL1915" "SL1917" "SL1918" "SL1919" "SL1920" "SL1921"
+[417] "SL1922" "SL1923" "SL1924" "SL1925" "SL1926" "SL1927" "SL1928" "SL1929"
+[425] "SL1930" "SL1931" "SL1932" "SL1933" "SL1934" "SL1935" "SL1937" "SL1938"
+[433] "SL1939" "SL1940" "SL1941" "SL1942" "SL1943" "SL1944" "SL1945" "SL1946"
+[441] "SL1947" "SL1948" "SL1949" "SL1950" "SL1951" "SL1952" "SL1953" "SL1954"
+[449] "SL1955" "SL1956" "SL1957" "SL1958" "SL1959" "SL1960" "SL1961" "SL1962"
+[457] "SL1963" "SL1964" "SL1965" "SL1966" "SL1967" "SL1968" "SL1969" "SL1970"
+[465] "SL1971" "SL1972" "SL1973" "SL1974" "SL1975" "SL1976" "SL1977" "SL1978"
+[473] "SL1979" "SL1980" "SL1981" "SL1982" "SL1983" "SL1984" "SL1985" "SL1986"
+[481] "SL1987" "SL1988" "SL1989" "SL1990" "SL1991" "SL1992" "SL1993" "SL1994"
+[489] "SL1995" "SL1996" "SL1997" "SL1998" "SL1999" "SL2000" "SL2001" "SL2002"
+[497] "SL2003" "SL2004" "SL2005" "SL2006" "SL2007" "SL2008" "SL2009" "SL2010"
+[505] "SL2011" "SL2012" "SL2013" "SL2014" "SL2015" "SL2016" "SL2017" "SL2018"
+[513] "SL2019" "SL2020" "SL2021" "SL2022" "SL2023" "SL2024" "SL2025" "SLP2W" 
+[521] "SLPW1B" "SLPW3A" "SLPW4A" "SLPW5X" "SLPW6A" "SLPW7"  "SLPW8" 
+[1] "-------------"
+[1] "Dereplicating data"
+Dereplicating sequence entries in Fastq file: FD_202307_3Pool_filtered/SL1501.fastq
+Encountered 6958 unique sequences from 47214 total sequences read.
+Dereplicating sequence entries in Fastq file: FD_202307_3Pool_filtered/SL1502.fastq
+Encountered 4652 unique sequences from 38228 total sequences read.
+Dereplicating sequence entries in Fastq file: FD_202307_3Pool_filtered/SL1503.fastq
+Encountered 10033 unique sequences from 20283 total sequences read.
+Dereplicating sequence entries in Fastq file: FD_202307_3Pool_filtered/SL1504.fastq
+Encountered 3173 unique sequences from 23270 total sequences read.
+Dereplicating sequence entries in Fastq file: FD_202307_3Pool_filtered/SL1505.fastq
+Encountered 5010 unique sequences from 26417 total sequences read.
+Dereplicating sequence entries in Fastq file: FD_202307_3Pool_filtered/SL1506.fastq
+Encountered 4039 unique sequences from 17440 total sequences read.
+Dereplicating sequence entries in Fastq file: FD_202307_3Pool_filtered/SL1507.fastq
+Encountered 2090 unique sequences from 9041 total sequences read.
+Dereplicating sequence entries in Fastq file: FD_202307_3Pool_filtered/SL1508.fastq
+Encountered 6267 unique sequences from 27209 total sequences read.
+Dereplicating sequence entries in Fastq file: FD_202307_3Pool_filtered/SL1509.fastq
+Encountered 4866 unique sequences from 31793 total sequences read.
+Dereplicating sequence entries in Fastq file: FD_202307_3Pool_filtered/SL1510.fastq
+Encountered 2258 unique sequences from 14878 total sequences read.
+Dereplicating sequence entries in Fastq file: FD_202307_3Pool_filtered/SL1511.fastq
+Encountered 3087 unique sequences from 17104 total sequences read.
+Dereplicating sequence entries in Fastq file: FD_202307_3Pool_filtered/SL1512.fastq
+Encountered 7599 unique sequences from 59276 total sequences read.
+Dereplicating sequence entries in Fastq file: FD_202307_3Pool_filtered/SL1513.fastq
+Encountered 5112 unique sequences from 39311 total sequences read.
+Dereplicating sequence entries in Fastq file: FD_202307_3Pool_filtered/SL1514.fastq
+Encountered 7138 unique sequences from 37750 total sequences read.
+Dereplicating sequence entries in Fastq file: FD_202307_3Pool_filtered/SL1515.fastq
+Encountered 5990 unique sequences from 25817 total sequences read.
+Dereplicating sequence entries in Fastq file: FD_202307_3Pool_filtered/SL1516.fastq
+Encountered 9566 unique sequences from 27810 total sequences read.
+Dereplicating sequence entries in Fastq file: FD_202307_3Pool_filtered/SL1517.fastq
+Encountered 4220 unique sequences from 24050 total sequences read.
+Dereplicating sequence entries in Fastq file: FD_202307_3Pool_filtered/SL1518.fastq
+Encountered 5273 unique sequences from 40133 total sequences read.
+Dereplicating sequence entries in Fastq file: FD_202307_3Pool_filtered/SL1519.fastq
+Encountered 5144 unique sequences from 34403 total sequences read.
+Dereplicating sequence entries in Fastq file: FD_202307_3Pool_filtered/SL1520.fastq
+Encountered 3055 unique sequences from 34825 total sequences read.
+Dereplicating sequence entries in Fastq file: FD_202307_3Pool_filtered/SL1521.fastq
+Encountered 5621 unique sequences from 33988 total sequences read.
+Dereplicating sequence entries in Fastq file: FD_202307_3Pool_filtered/SL1522.fastq
+Encountered 5381 unique sequences from 50905 total sequences read.
+Dereplicating sequence entries in Fastq file: FD_202307_3Pool_filtered/SL1523.fastq
+Encountered 9840 unique sequences from 66524 total sequences read.
+Dereplicating sequence entries in Fastq file: FD_202307_3Pool_filtered/SL1524.fastq
+Encountered 6384 unique sequences from 29636 total sequences read.
+Dereplicating sequence entries in Fastq file: FD_202307_3Pool_filtered/SL1525.fastq
+Encountered 8422 unique sequences from 46440 total sequences read.
+Dereplicating sequence entries in Fastq file: FD_202307_3Pool_filtered/SL1526.fastq
+Encountered 4398 unique sequences from 24943 total sequences read.
+Dereplicating sequence entries in Fastq file: FD_202307_3Pool_filtered/SL1527.fastq
+Encountered 3702 unique sequences from 49665 total sequences read.
+Dereplicating sequence entries in Fastq file: FD_202307_3Pool_filtered/SL1528.fastq
+Encountered 1284 unique sequences from 5855 total sequences read.
+Dereplicating sequence entries in Fastq file: FD_202307_3Pool_filtered/SL1529.fastq
+Encountered 5191 unique sequences from 26341 total sequences read.
+Dereplicating sequence entries in Fastq file: FD_202307_3Pool_filtered/SL1530.fastq
+Encountered 4115 unique sequences from 39424 total sequences read.
+Dereplicating sequence entries in Fastq file: FD_202307_3Pool_filtered/SL1531.fastq
+Encountered 3543 unique sequences from 24801 total sequences read.
+Dereplicating sequence entries in Fastq file: FD_202307_3Pool_filtered/SL1532.fastq
+Encountered 6800 unique sequences from 37150 total sequences read.
+Dereplicating sequence entries in Fastq file: FD_202307_3Pool_filtered/SL1533.fastq
+Encountered 5571 unique sequences from 38661 total sequences read.
+Dereplicating sequence entries in Fastq file: FD_202307_3Pool_filtered/SL1534.fastq
+Encountered 6385 unique sequences from 42325 total sequences read.
+Dereplicating sequence entries in Fastq file: FD_202307_3Pool_filtered/SL1535.fastq
+Encountered 3993 unique sequences from 35454 total sequences read.
+Dereplicating sequence entries in Fastq file: FD_202307_3Pool_filtered/SL1536.fastq
+Encountered 798 unique sequences from 3138 total sequences read.
+Dereplicating sequence entries in Fastq file: FD_202307_3Pool_filtered/SL1537.fastq
+Encountered 7808 unique sequences from 47131 total sequences read.
+Dereplicating sequence entries in Fastq file: FD_202307_3Pool_filtered/SL1538.fastq
+Encountered 4606 unique sequences from 21714 total sequences read.
+Dereplicating sequence entries in Fastq file: FD_202307_3Pool_filtered/SL1539.fastq
+Encountered 4840 unique sequences from 36167 total sequences read.
+Dereplicating sequence entries in Fastq file: FD_202307_3Pool_filtered/SL1540.fastq
+Encountered 257 unique sequences from 264 total sequences read.
+Dereplicating sequence entries in Fastq file: FD_202307_3Pool_filtered/SL1541.fastq
+Encountered 3999 unique sequences from 50301 total sequences read.
+Dereplicating sequence entries in Fastq file: FD_202307_3Pool_filtered/SL1542.fastq
+Encountered 3965 unique sequences from 31716 total sequences read.
+Dereplicating sequence entries in Fastq file: FD_202307_3Pool_filtered/SL1543.fastq
+Encountered 6321 unique sequences from 49218 total sequences read.
+Dereplicating sequence entries in Fastq file: FD_202307_3Pool_filtered/SL1544.fastq
+Encountered 4824 unique sequences from 39854 total sequences read.
+Dereplicating sequence entries in Fastq file: FD_202307_3Pool_filtered/SL1545.fastq
+Encountered 8260 unique sequences from 42305 total sequences read.
+Dereplicating sequence entries in Fastq file: FD_202307_3Pool_filtered/SL1546.fastq
+Encountered 5503 unique sequences from 30808 total sequences read.
+Dereplicating sequence entries in Fastq file: FD_202307_3Pool_filtered/SL1547.fastq
+Encountered 7208 unique sequences from 47897 total sequences read.
+Dereplicating sequence entries in Fastq file: FD_202307_3Pool_filtered/SL1548.fastq
+Encountered 5332 unique sequences from 7590 total sequences read.
+Dereplicating sequence entries in Fastq file: FD_202307_3Pool_filtered/SL1549.fastq
+Encountered 5576 unique sequences from 39953 total sequences read.
+Dereplicating sequence entries in Fastq file: FD_202307_3Pool_filtered/SL1550.fastq
+Encountered 7508 unique sequences from 39866 total sequences read.
+Dereplicating sequence entries in Fastq file: FD_202307_3Pool_filtered/SL1551.fastq
+Encountered 3196 unique sequences from 30893 total sequences read.
+Dereplicating sequence entries in Fastq file: FD_202307_3Pool_filtered/SL1552.fastq
+Encountered 33 unique sequences from 73 total sequences read.
+Dereplicating sequence entries in Fastq file: FD_202307_3Pool_filtered/SL1553.fastq
+Encountered 729 unique sequences from 3383 total sequences read.
+Dereplicating sequence entries in Fastq file: FD_202307_3Pool_filtered/SL1554.fastq
+Encountered 2663 unique sequences from 13004 total sequences read.
+Dereplicating sequence entries in Fastq file: FD_202307_3Pool_filtered/SL1555.fastq
+Encountered 4203 unique sequences from 30635 total sequences read.
+Dereplicating sequence entries in Fastq file: FD_202307_3Pool_filtered/SL1556.fastq
+Encountered 6759 unique sequences from 14629 total sequences read.
+Dereplicating sequence entries in Fastq file: FD_202307_3Pool_filtered/SL1557.fastq
+Encountered 3802 unique sequences from 20152 total sequences read.
+Dereplicating sequence entries in Fastq file: FD_202307_3Pool_filtered/SL1558.fastq
+Encountered 7029 unique sequences from 76188 total sequences read.
+Dereplicating sequence entries in Fastq file: FD_202307_3Pool_filtered/SL1559.fastq
+Encountered 4564 unique sequences from 35013 total sequences read.
+Dereplicating sequence entries in Fastq file: FD_202307_3Pool_filtered/SL1560.fastq
+Encountered 1476 unique sequences from 13720 total sequences read.
+Dereplicating sequence entries in Fastq file: FD_202307_3Pool_filtered/SL1561.fastq
+Encountered 6345 unique sequences from 27265 total sequences read.
+Dereplicating sequence entries in Fastq file: FD_202307_3Pool_filtered/SL1562.fastq
+Encountered 3476 unique sequences from 16243 total sequences read.
+Dereplicating sequence entries in Fastq file: FD_202307_3Pool_filtered/SL1563.fastq
+Encountered 3575 unique sequences from 18801 total sequences read.
+Dereplicating sequence entries in Fastq file: FD_202307_3Pool_filtered/SL1564.fastq
+Encountered 2663 unique sequences from 10839 total sequences read.
+Dereplicating sequence entries in Fastq file: FD_202307_3Pool_filtered/SL1565.fastq
+Encountered 5025 unique sequences from 39994 total sequences read.
+Dereplicating sequence entries in Fastq file: FD_202307_3Pool_filtered/SL1566.fastq
+Encountered 4691 unique sequences from 27906 total sequences read.
+Dereplicating sequence entries in Fastq file: FD_202307_3Pool_filtered/SL1567.fastq
+Encountered 6681 unique sequences from 35516 total sequences read.
+Dereplicating sequence entries in Fastq file: FD_202307_3Pool_filtered/SL1568.fastq
+Encountered 7590 unique sequences from 58733 total sequences read.
+Dereplicating sequence entries in Fastq file: FD_202307_3Pool_filtered/SL1569.fastq
+Encountered 7796 unique sequences from 43987 total sequences read.
+Dereplicating sequence entries in Fastq file: FD_202307_3Pool_filtered/SL1570.fastq
+Encountered 8506 unique sequences from 50050 total sequences read.
+Dereplicating sequence entries in Fastq file: FD_202307_3Pool_filtered/SL1571.fastq
+Encountered 7152 unique sequences from 39996 total sequences read.
+Dereplicating sequence entries in Fastq file: FD_202307_3Pool_filtered/SL1572.fastq
+Encountered 8532 unique sequences from 28661 total sequences read.
+Dereplicating sequence entries in Fastq file: FD_202307_3Pool_filtered/SL1573.fastq
+Encountered 6384 unique sequences from 54465 total sequences read.
+Dereplicating sequence entries in Fastq file: FD_202307_3Pool_filtered/SL1574.fastq
+Encountered 1722 unique sequences from 1884 total sequences read.
+Dereplicating sequence entries in Fastq file: FD_202307_3Pool_filtered/SL1575.fastq
+Encountered 4113 unique sequences from 43441 total sequences read.
+Dereplicating sequence entries in Fastq file: FD_202307_3Pool_filtered/SL1576.fastq
+Encountered 6473 unique sequences from 43630 total sequences read.
+Dereplicating sequence entries in Fastq file: FD_202307_3Pool_filtered/SL1577.fastq
+Encountered 6277 unique sequences from 35627 total sequences read.
+Dereplicating sequence entries in Fastq file: FD_202307_3Pool_filtered/SL1578.fastq
+Encountered 5024 unique sequences from 25297 total sequences read.
+Dereplicating sequence entries in Fastq file: FD_202307_3Pool_filtered/SL1579.fastq
+Encountered 5166 unique sequences from 36929 total sequences read.
+Dereplicating sequence entries in Fastq file: FD_202307_3Pool_filtered/SL1580.fastq
+Encountered 6384 unique sequences from 39779 total sequences read.
+Dereplicating sequence entries in Fastq file: FD_202307_3Pool_filtered/SL1581.fastq
+Encountered 5701 unique sequences from 42241 total sequences read.
+Dereplicating sequence entries in Fastq file: FD_202307_3Pool_filtered/SL1582.fastq
+Encountered 3203 unique sequences from 23435 total sequences read.
+Dereplicating sequence entries in Fastq file: FD_202307_3Pool_filtered/SL1583.fastq
+Encountered 4092 unique sequences from 22125 total sequences read.
+Dereplicating sequence entries in Fastq file: FD_202307_3Pool_filtered/SL1584.fastq
+Encountered 4181 unique sequences from 22756 total sequences read.
+Dereplicating sequence entries in Fastq file: FD_202307_3Pool_filtered/SL1585.fastq
+Encountered 2752 unique sequences from 12859 total sequences read.
+Dereplicating sequence entries in Fastq file: FD_202307_3Pool_filtered/SL1586.fastq
+Encountered 4387 unique sequences from 19367 total sequences read.
+Dereplicating sequence entries in Fastq file: FD_202307_3Pool_filtered/SL1587.fastq
+Encountered 6157 unique sequences from 25902 total sequences read.
+Dereplicating sequence entries in Fastq file: FD_202307_3Pool_filtered/SL1588.fastq
+Encountered 5632 unique sequences from 7445 total sequences read.
+Dereplicating sequence entries in Fastq file: FD_202307_3Pool_filtered/SL1589.fastq
+Encountered 4537 unique sequences from 33482 total sequences read.
+Dereplicating sequence entries in Fastq file: FD_202307_3Pool_filtered/SL1590.fastq
+Encountered 4508 unique sequences from 37309 total sequences read.
+Dereplicating sequence entries in Fastq file: FD_202307_3Pool_filtered/SL1591.fastq
+Encountered 3546 unique sequences from 26706 total sequences read.
+Dereplicating sequence entries in Fastq file: FD_202307_3Pool_filtered/SL1592.fastq
+Encountered 4095 unique sequences from 25989 total sequences read.
+Dereplicating sequence entries in Fastq file: FD_202307_3Pool_filtered/SL1593.fastq
+Encountered 5590 unique sequences from 26640 total sequences read.
+Dereplicating sequence entries in Fastq file: FD_202307_3Pool_filtered/SL1594.fastq
+Encountered 6177 unique sequences from 35324 total sequences read.
+Dereplicating sequence entries in Fastq file: FD_202307_3Pool_filtered/SL1595.fastq
+Encountered 5590 unique sequences from 51415 total sequences read.
+Dereplicating sequence entries in Fastq file: FD_202307_3Pool_filtered/SL1596.fastq
+Encountered 10729 unique sequences from 28865 total sequences read.
+Dereplicating sequence entries in Fastq file: FD_202307_3Pool_filtered/SL1597.fastq
+Encountered 9417 unique sequences from 51707 total sequences read.
+Dereplicating sequence entries in Fastq file: FD_202307_3Pool_filtered/SL1598.fastq
+Encountered 5431 unique sequences from 30342 total sequences read.
+Dereplicating sequence entries in Fastq file: FD_202307_3Pool_filtered/SL1599.fastq
+Encountered 7355 unique sequences from 52721 total sequences read.
+Dereplicating sequence entries in Fastq file: FD_202307_3Pool_filtered/SL1600.fastq
+Encountered 3653 unique sequences from 21186 total sequences read.
+Dereplicating sequence entries in Fastq file: FD_202307_3Pool_filtered/SL1601.fastq
+Encountered 5090 unique sequences from 31119 total sequences read.
+Dereplicating sequence entries in Fastq file: FD_202307_3Pool_filtered/SL1602.fastq
+Encountered 5587 unique sequences from 36807 total sequences read.
+Dereplicating sequence entries in Fastq file: FD_202307_3Pool_filtered/SL1603.fastq
+Encountered 7012 unique sequences from 34044 total sequences read.
+Dereplicating sequence entries in Fastq file: FD_202307_3Pool_filtered/SL1604.fastq
+Encountered 67 unique sequences from 77 total sequences read.
+Dereplicating sequence entries in Fastq file: FD_202307_3Pool_filtered/SL1605.fastq
+Encountered 6947 unique sequences from 37170 total sequences read.
+Dereplicating sequence entries in Fastq file: FD_202307_3Pool_filtered/SL1606.fastq
+Encountered 10798 unique sequences from 54156 total sequences read.
+Dereplicating sequence entries in Fastq file: FD_202307_3Pool_filtered/SL1607.fastq
+Encountered 7416 unique sequences from 37605 total sequences read.
+Dereplicating sequence entries in Fastq file: FD_202307_3Pool_filtered/SL1608.fastq
+Encountered 6739 unique sequences from 58115 total sequences read.
+Dereplicating sequence entries in Fastq file: FD_202307_3Pool_filtered/SL1609.fastq
+Encountered 8471 unique sequences from 34288 total sequences read.
+Dereplicating sequence entries in Fastq file: FD_202307_3Pool_filtered/SL1610.fastq
+Encountered 6338 unique sequences from 84247 total sequences read.
+Dereplicating sequence entries in Fastq file: FD_202307_3Pool_filtered/SL1611.fastq
+Encountered 4453 unique sequences from 27710 total sequences read.
+Dereplicating sequence entries in Fastq file: FD_202307_3Pool_filtered/SL1612.fastq
+Encountered 7170 unique sequences from 52992 total sequences read.
+Dereplicating sequence entries in Fastq file: FD_202307_3Pool_filtered/SL1613.fastq
+Encountered 10308 unique sequences from 49695 total sequences read.
+Dereplicating sequence entries in Fastq file: FD_202307_3Pool_filtered/SL1614.fastq
+Encountered 3263 unique sequences from 22976 total sequences read.
+Dereplicating sequence entries in Fastq file: FD_202307_3Pool_filtered/SL1615.fastq
+Encountered 16690 unique sequences from 77856 total sequences read.
+Dereplicating sequence entries in Fastq file: FD_202307_3Pool_filtered/SL1616.fastq
+Encountered 9763 unique sequences from 50794 total sequences read.
+Dereplicating sequence entries in Fastq file: FD_202307_3Pool_filtered/SL1617.fastq
+Encountered 3756 unique sequences from 16176 total sequences read.
+Dereplicating sequence entries in Fastq file: FD_202307_3Pool_filtered/SL1618.fastq
+Encountered 7554 unique sequences from 41418 total sequences read.
+Dereplicating sequence entries in Fastq file: FD_202307_3Pool_filtered/SL1619.fastq
+Encountered 5908 unique sequences from 38398 total sequences read.
+Dereplicating sequence entries in Fastq file: FD_202307_3Pool_filtered/SL1620.fastq
+Encountered 3870 unique sequences from 11204 total sequences read.
+Dereplicating sequence entries in Fastq file: FD_202307_3Pool_filtered/SL1621.fastq
+Encountered 8963 unique sequences from 39280 total sequences read.
+Dereplicating sequence entries in Fastq file: FD_202307_3Pool_filtered/SL1622.fastq
+Encountered 7001 unique sequences from 48225 total sequences read.
+Dereplicating sequence entries in Fastq file: FD_202307_3Pool_filtered/SL1623.fastq
+Encountered 6454 unique sequences from 42058 total sequences read.
+Dereplicating sequence entries in Fastq file: FD_202307_3Pool_filtered/SL1624.fastq
+Encountered 7721 unique sequences from 39256 total sequences read.
+Dereplicating sequence entries in Fastq file: FD_202307_3Pool_filtered/SL1626.fastq
+Encountered 5713 unique sequences from 30420 total sequences read.
+Dereplicating sequence entries in Fastq file: FD_202307_3Pool_filtered/SL1627.fastq
+Encountered 8492 unique sequences from 44609 total sequences read.
+Dereplicating sequence entries in Fastq file: FD_202307_3Pool_filtered/SL1628.fastq
+Encountered 650 unique sequences from 2440 total sequences read.
+Dereplicating sequence entries in Fastq file: FD_202307_3Pool_filtered/SL1629.fastq
+Encountered 7113 unique sequences from 47893 total sequences read.
+Dereplicating sequence entries in Fastq file: FD_202307_3Pool_filtered/SL1630.fastq
+Encountered 6499 unique sequences from 26057 total sequences read.
+Dereplicating sequence entries in Fastq file: FD_202307_3Pool_filtered/SL1631.fastq
+Encountered 7384 unique sequences from 31033 total sequences read.
+Dereplicating sequence entries in Fastq file: FD_202307_3Pool_filtered/SL1632.fastq
+Encountered 2386 unique sequences from 9500 total sequences read.
+Dereplicating sequence entries in Fastq file: FD_202307_3Pool_filtered/SL1633.fastq
+Encountered 3622 unique sequences from 15760 total sequences read.
+Dereplicating sequence entries in Fastq file: FD_202307_3Pool_filtered/SL1634.fastq
+Encountered 1155 unique sequences from 5941 total sequences read.
+Dereplicating sequence entries in Fastq file: FD_202307_3Pool_filtered/SL1635.fastq
+Encountered 3696 unique sequences from 16276 total sequences read.
+Dereplicating sequence entries in Fastq file: FD_202307_3Pool_filtered/SL1636.fastq
+Encountered 5129 unique sequences from 35109 total sequences read.
+Dereplicating sequence entries in Fastq file: FD_202307_3Pool_filtered/SL1637.fastq
+Encountered 3084 unique sequences from 13073 total sequences read.
+Dereplicating sequence entries in Fastq file: FD_202307_3Pool_filtered/SL1638.fastq
+Encountered 9849 unique sequences from 23737 total sequences read.
+Dereplicating sequence entries in Fastq file: FD_202307_3Pool_filtered/SL1639.fastq
+Encountered 6970 unique sequences from 43812 total sequences read.
+Dereplicating sequence entries in Fastq file: FD_202307_3Pool_filtered/SL1640.fastq
+Encountered 4717 unique sequences from 22487 total sequences read.
+Dereplicating sequence entries in Fastq file: FD_202307_3Pool_filtered/SL1641.fastq
+Encountered 1576 unique sequences from 8297 total sequences read.
+Dereplicating sequence entries in Fastq file: FD_202307_3Pool_filtered/SL1642.fastq
+Encountered 2063 unique sequences from 10265 total sequences read.
+Dereplicating sequence entries in Fastq file: FD_202307_3Pool_filtered/SL1643.fastq
+Encountered 4708 unique sequences from 23424 total sequences read.
+Dereplicating sequence entries in Fastq file: FD_202307_3Pool_filtered/SL1645.fastq
+Encountered 6750 unique sequences from 41170 total sequences read.
+Dereplicating sequence entries in Fastq file: FD_202307_3Pool_filtered/SL1646.fastq
+Encountered 3202 unique sequences from 25596 total sequences read.
+Dereplicating sequence entries in Fastq file: FD_202307_3Pool_filtered/SL1648.fastq
+Encountered 1790 unique sequences from 9230 total sequences read.
+Dereplicating sequence entries in Fastq file: FD_202307_3Pool_filtered/SL1649.fastq
+Encountered 5053 unique sequences from 21026 total sequences read.
+Dereplicating sequence entries in Fastq file: FD_202307_3Pool_filtered/SL1650.fastq
+Encountered 3681 unique sequences from 19859 total sequences read.
+Dereplicating sequence entries in Fastq file: FD_202307_3Pool_filtered/SL1651.fastq
+Encountered 6324 unique sequences from 30868 total sequences read.
+Dereplicating sequence entries in Fastq file: FD_202307_3Pool_filtered/SL1652.fastq
+Encountered 4856 unique sequences from 40341 total sequences read.
+Dereplicating sequence entries in Fastq file: FD_202307_3Pool_filtered/SL1653.fastq
+Encountered 10137 unique sequences from 58266 total sequences read.
+Dereplicating sequence entries in Fastq file: FD_202307_3Pool_filtered/SL1654.fastq
+Encountered 6561 unique sequences from 38979 total sequences read.
+Dereplicating sequence entries in Fastq file: FD_202307_3Pool_filtered/SL1656.fastq
+Encountered 3782 unique sequences from 33679 total sequences read.
+Dereplicating sequence entries in Fastq file: FD_202307_3Pool_filtered/SL1657.fastq
+Encountered 4686 unique sequences from 40623 total sequences read.
+Dereplicating sequence entries in Fastq file: FD_202307_3Pool_filtered/SL1658.fastq
+Encountered 2199 unique sequences from 19340 total sequences read.
+Dereplicating sequence entries in Fastq file: FD_202307_3Pool_filtered/SL1659.fastq
+Encountered 5353 unique sequences from 30497 total sequences read.
+Dereplicating sequence entries in Fastq file: FD_202307_3Pool_filtered/SL1660.fastq
+Encountered 4160 unique sequences from 17144 total sequences read.
+Dereplicating sequence entries in Fastq file: FD_202307_3Pool_filtered/SL1661.fastq
+Encountered 6885 unique sequences from 36831 total sequences read.
+Dereplicating sequence entries in Fastq file: FD_202307_3Pool_filtered/SL1662.fastq
+Encountered 5645 unique sequences from 31152 total sequences read.
+Dereplicating sequence entries in Fastq file: FD_202307_3Pool_filtered/SL1663.fastq
+Encountered 5125 unique sequences from 34848 total sequences read.
+Dereplicating sequence entries in Fastq file: FD_202307_3Pool_filtered/SL1664.fastq
+Encountered 4139 unique sequences from 8921 total sequences read.
+Dereplicating sequence entries in Fastq file: FD_202307_3Pool_filtered/SL1665.fastq
+Encountered 4168 unique sequences from 27233 total sequences read.
+Dereplicating sequence entries in Fastq file: FD_202307_3Pool_filtered/SL1666.fastq
+Encountered 4265 unique sequences from 20480 total sequences read.
+Dereplicating sequence entries in Fastq file: FD_202307_3Pool_filtered/SL1667.fastq
+Encountered 3521 unique sequences from 15284 total sequences read.
+Dereplicating sequence entries in Fastq file: FD_202307_3Pool_filtered/SL1668.fastq
+Encountered 2587 unique sequences from 12502 total sequences read.
+Dereplicating sequence entries in Fastq file: FD_202307_3Pool_filtered/SL1669.fastq
+Encountered 9306 unique sequences from 46717 total sequences read.
+Dereplicating sequence entries in Fastq file: FD_202307_3Pool_filtered/SL1670.fastq
+Encountered 4209 unique sequences from 23349 total sequences read.
+Dereplicating sequence entries in Fastq file: FD_202307_3Pool_filtered/SL1671.fastq
+Encountered 4170 unique sequences from 20570 total sequences read.
+Dereplicating sequence entries in Fastq file: FD_202307_3Pool_filtered/SL1672.fastq
+Encountered 4032 unique sequences from 19957 total sequences read.
+Dereplicating sequence entries in Fastq file: FD_202307_3Pool_filtered/SL1673.fastq
+Encountered 4691 unique sequences from 19486 total sequences read.
+Dereplicating sequence entries in Fastq file: FD_202307_3Pool_filtered/SL1674.fastq
+Encountered 5371 unique sequences from 39988 total sequences read.
+Dereplicating sequence entries in Fastq file: FD_202307_3Pool_filtered/SL1675.fastq
+Encountered 6827 unique sequences from 47167 total sequences read.
+Dereplicating sequence entries in Fastq file: FD_202307_3Pool_filtered/SL1676.fastq
+Encountered 2227 unique sequences from 16905 total sequences read.
+Dereplicating sequence entries in Fastq file: FD_202307_3Pool_filtered/SL1677.fastq
+Encountered 6631 unique sequences from 13924 total sequences read.
+Dereplicating sequence entries in Fastq file: FD_202307_3Pool_filtered/SL1678.fastq
+Encountered 3664 unique sequences from 24871 total sequences read.
+Dereplicating sequence entries in Fastq file: FD_202307_3Pool_filtered/SL1679.fastq
+Encountered 3573 unique sequences from 23775 total sequences read.
+Dereplicating sequence entries in Fastq file: FD_202307_3Pool_filtered/SL1680.fastq
+Encountered 4241 unique sequences from 29113 total sequences read.
+Dereplicating sequence entries in Fastq file: FD_202307_3Pool_filtered/SL1681.fastq
+Encountered 3186 unique sequences from 24480 total sequences read.
+Dereplicating sequence entries in Fastq file: FD_202307_3Pool_filtered/SL1682.fastq
+Encountered 6262 unique sequences from 35676 total sequences read.
+Dereplicating sequence entries in Fastq file: FD_202307_3Pool_filtered/SL1683.fastq
+Encountered 393 unique sequences from 413 total sequences read.
+Dereplicating sequence entries in Fastq file: FD_202307_3Pool_filtered/SL1684.fastq
+Encountered 2152 unique sequences from 15287 total sequences read.
+Dereplicating sequence entries in Fastq file: FD_202307_3Pool_filtered/SL1685.fastq
+Encountered 4154 unique sequences from 20300 total sequences read.
+Dereplicating sequence entries in Fastq file: FD_202307_3Pool_filtered/SL1686.fastq
+Encountered 10049 unique sequences from 68580 total sequences read.
+Dereplicating sequence entries in Fastq file: FD_202307_3Pool_filtered/SL1687.fastq
+Encountered 7267 unique sequences from 47511 total sequences read.
+Dereplicating sequence entries in Fastq file: FD_202307_3Pool_filtered/SL1688.fastq
+Encountered 3016 unique sequences from 11391 total sequences read.
+Dereplicating sequence entries in Fastq file: FD_202307_3Pool_filtered/SL1689.fastq
+Encountered 5917 unique sequences from 26038 total sequences read.
+Dereplicating sequence entries in Fastq file: FD_202307_3Pool_filtered/SL1690.fastq
+Encountered 2677 unique sequences from 31429 total sequences read.
+Dereplicating sequence entries in Fastq file: FD_202307_3Pool_filtered/SL1691.fastq
+Encountered 3504 unique sequences from 24570 total sequences read.
+Dereplicating sequence entries in Fastq file: FD_202307_3Pool_filtered/SL1692.fastq
+Encountered 8382 unique sequences from 65357 total sequences read.
+Dereplicating sequence entries in Fastq file: FD_202307_3Pool_filtered/SL1693.fastq
+Encountered 10085 unique sequences from 51679 total sequences read.
+Dereplicating sequence entries in Fastq file: FD_202307_3Pool_filtered/SL1694.fastq
+Encountered 6711 unique sequences from 24571 total sequences read.
+Dereplicating sequence entries in Fastq file: FD_202307_3Pool_filtered/SL1695.fastq
+Encountered 4242 unique sequences from 21715 total sequences read.
+Dereplicating sequence entries in Fastq file: FD_202307_3Pool_filtered/SL1696.fastq
+Encountered 4299 unique sequences from 11198 total sequences read.
+Dereplicating sequence entries in Fastq file: FD_202307_3Pool_filtered/SL1697.fastq
+Encountered 10748 unique sequences from 35211 total sequences read.
+Dereplicating sequence entries in Fastq file: FD_202307_3Pool_filtered/SL1698.fastq
+Encountered 3698 unique sequences from 15535 total sequences read.
+Dereplicating sequence entries in Fastq file: FD_202307_3Pool_filtered/SL1699.fastq
+Encountered 8059 unique sequences from 37057 total sequences read.
+Dereplicating sequence entries in Fastq file: FD_202307_3Pool_filtered/SL1700.fastq
+Encountered 3969 unique sequences from 14678 total sequences read.
+Dereplicating sequence entries in Fastq file: FD_202307_3Pool_filtered/SL1701.fastq
+Encountered 10711 unique sequences from 40315 total sequences read.
+Dereplicating sequence entries in Fastq file: FD_202307_3Pool_filtered/SL1702.fastq
+Encountered 10210 unique sequences from 53359 total sequences read.
+Dereplicating sequence entries in Fastq file: FD_202307_3Pool_filtered/SL1703.fastq
+Encountered 5986 unique sequences from 27330 total sequences read.
+Dereplicating sequence entries in Fastq file: FD_202307_3Pool_filtered/SL1704.fastq
+Encountered 11645 unique sequences from 69837 total sequences read.
+Dereplicating sequence entries in Fastq file: FD_202307_3Pool_filtered/SL1705.fastq
+Encountered 5845 unique sequences from 31076 total sequences read.
+Dereplicating sequence entries in Fastq file: FD_202307_3Pool_filtered/SL1706.fastq
+Encountered 3996 unique sequences from 33380 total sequences read.
+Dereplicating sequence entries in Fastq file: FD_202307_3Pool_filtered/SL1707.fastq
+Encountered 4486 unique sequences from 18917 total sequences read.
+Dereplicating sequence entries in Fastq file: FD_202307_3Pool_filtered/SL1708.fastq
+Encountered 7315 unique sequences from 51193 total sequences read.
+Dereplicating sequence entries in Fastq file: FD_202307_3Pool_filtered/SL1709.fastq
+Encountered 4516 unique sequences from 30216 total sequences read.
+Dereplicating sequence entries in Fastq file: FD_202307_3Pool_filtered/SL1710.fastq
+Encountered 3100 unique sequences from 16680 total sequences read.
+Dereplicating sequence entries in Fastq file: FD_202307_3Pool_filtered/SL1711.fastq
+Encountered 4644 unique sequences from 13628 total sequences read.
+Dereplicating sequence entries in Fastq file: FD_202307_3Pool_filtered/SL1712.fastq
+Encountered 12621 unique sequences from 73249 total sequences read.
+Dereplicating sequence entries in Fastq file: FD_202307_3Pool_filtered/SL1713.fastq
+Encountered 7445 unique sequences from 47007 total sequences read.
+Dereplicating sequence entries in Fastq file: FD_202307_3Pool_filtered/SL1714.fastq
+Encountered 4534 unique sequences from 28102 total sequences read.
+Dereplicating sequence entries in Fastq file: FD_202307_3Pool_filtered/SL1715.fastq
+Encountered 6522 unique sequences from 38102 total sequences read.
+Dereplicating sequence entries in Fastq file: FD_202307_3Pool_filtered/SL1716.fastq
+Encountered 10302 unique sequences from 27223 total sequences read.
+Dereplicating sequence entries in Fastq file: FD_202307_3Pool_filtered/SL1717.fastq
+Encountered 15145 unique sequences from 88329 total sequences read.
+Dereplicating sequence entries in Fastq file: FD_202307_3Pool_filtered/SL1718.fastq
+Encountered 6846 unique sequences from 44664 total sequences read.
+Dereplicating sequence entries in Fastq file: FD_202307_3Pool_filtered/SL1719.fastq
+Encountered 14863 unique sequences from 89960 total sequences read.
+Dereplicating sequence entries in Fastq file: FD_202307_3Pool_filtered/SL1720.fastq
+Encountered 6208 unique sequences from 51861 total sequences read.
+Dereplicating sequence entries in Fastq file: FD_202307_3Pool_filtered/SL1721.fastq
+Encountered 80 unique sequences from 84 total sequences read.
+Dereplicating sequence entries in Fastq file: FD_202307_3Pool_filtered/SL1722.fastq
+Encountered 7042 unique sequences from 48217 total sequences read.
+Dereplicating sequence entries in Fastq file: FD_202307_3Pool_filtered/SL1723.fastq
+Encountered 6158 unique sequences from 34778 total sequences read.
+Dereplicating sequence entries in Fastq file: FD_202307_3Pool_filtered/SL1724.fastq
+Encountered 7586 unique sequences from 25471 total sequences read.
+Dereplicating sequence entries in Fastq file: FD_202307_3Pool_filtered/SL1725.fastq
+Encountered 9596 unique sequences from 63937 total sequences read.
+Dereplicating sequence entries in Fastq file: FD_202307_3Pool_filtered/SL1726.fastq
+Encountered 492 unique sequences from 2485 total sequences read.
+Dereplicating sequence entries in Fastq file: FD_202307_3Pool_filtered/SL1727.fastq
+Encountered 6879 unique sequences from 26958 total sequences read.
+Dereplicating sequence entries in Fastq file: FD_202307_3Pool_filtered/SL1728.fastq
+Encountered 2754 unique sequences from 17422 total sequences read.
+Dereplicating sequence entries in Fastq file: FD_202307_3Pool_filtered/SL1729.fastq
+Encountered 4304 unique sequences from 28658 total sequences read.
+Dereplicating sequence entries in Fastq file: FD_202307_3Pool_filtered/SL1730.fastq
+Encountered 6265 unique sequences from 30892 total sequences read.
+Dereplicating sequence entries in Fastq file: FD_202307_3Pool_filtered/SL1731.fastq
+Encountered 8046 unique sequences from 42799 total sequences read.
+Dereplicating sequence entries in Fastq file: FD_202307_3Pool_filtered/SL1732.fastq
+Encountered 4493 unique sequences from 22054 total sequences read.
+Dereplicating sequence entries in Fastq file: FD_202307_3Pool_filtered/SL1733.fastq
+Encountered 4572 unique sequences from 19630 total sequences read.
+Dereplicating sequence entries in Fastq file: FD_202307_3Pool_filtered/SL1734.fastq
+Encountered 9390 unique sequences from 18978 total sequences read.
+Dereplicating sequence entries in Fastq file: FD_202307_3Pool_filtered/SL1735.fastq
+Encountered 4612 unique sequences from 22798 total sequences read.
+Dereplicating sequence entries in Fastq file: FD_202307_3Pool_filtered/SL1736.fastq
+Encountered 4465 unique sequences from 33336 total sequences read.
+Dereplicating sequence entries in Fastq file: FD_202307_3Pool_filtered/SL1737.fastq
+Encountered 11279 unique sequences from 43473 total sequences read.
+Dereplicating sequence entries in Fastq file: FD_202307_3Pool_filtered/SL1738.fastq
+Encountered 4853 unique sequences from 35765 total sequences read.
+Dereplicating sequence entries in Fastq file: FD_202307_3Pool_filtered/SL1739.fastq
+Encountered 8172 unique sequences from 40304 total sequences read.
+Dereplicating sequence entries in Fastq file: FD_202307_3Pool_filtered/SL1740.fastq
+Encountered 5553 unique sequences from 24236 total sequences read.
+Dereplicating sequence entries in Fastq file: FD_202307_3Pool_filtered/SL1741.fastq
+Encountered 9385 unique sequences from 33785 total sequences read.
+Dereplicating sequence entries in Fastq file: FD_202307_3Pool_filtered/SL1742.fastq
+Encountered 10176 unique sequences from 47420 total sequences read.
+Dereplicating sequence entries in Fastq file: FD_202307_3Pool_filtered/SL1743.fastq
+Encountered 86 unique sequences from 87 total sequences read.
+Dereplicating sequence entries in Fastq file: FD_202307_3Pool_filtered/SL1744.fastq
+Encountered 6889 unique sequences from 47250 total sequences read.
+Dereplicating sequence entries in Fastq file: FD_202307_3Pool_filtered/SL1745.fastq
+Encountered 4436 unique sequences from 30898 total sequences read.
+Dereplicating sequence entries in Fastq file: FD_202307_3Pool_filtered/SL1746.fastq
+Encountered 4582 unique sequences from 21003 total sequences read.
+Dereplicating sequence entries in Fastq file: FD_202307_3Pool_filtered/SL1747.fastq
+Encountered 7030 unique sequences from 37103 total sequences read.
+Dereplicating sequence entries in Fastq file: FD_202307_3Pool_filtered/SL1748.fastq
+Encountered 5287 unique sequences from 36041 total sequences read.
+Dereplicating sequence entries in Fastq file: FD_202307_3Pool_filtered/SL1749.fastq
+Encountered 7228 unique sequences from 38571 total sequences read.
+Dereplicating sequence entries in Fastq file: FD_202307_3Pool_filtered/SL1750.fastq
+Encountered 923 unique sequences from 5609 total sequences read.
+Dereplicating sequence entries in Fastq file: FD_202307_3Pool_filtered/SL1751.fastq
+Encountered 39 unique sequences from 42 total sequences read.
+Dereplicating sequence entries in Fastq file: FD_202307_3Pool_filtered/SL1752.fastq
+Encountered 9538 unique sequences from 73595 total sequences read.
+Dereplicating sequence entries in Fastq file: FD_202307_3Pool_filtered/SL1753.fastq
+Encountered 7502 unique sequences from 44603 total sequences read.
+Dereplicating sequence entries in Fastq file: FD_202307_3Pool_filtered/SL1754.fastq
+Encountered 5831 unique sequences from 37360 total sequences read.
+Dereplicating sequence entries in Fastq file: FD_202307_3Pool_filtered/SL1755.fastq
+Encountered 5112 unique sequences from 24523 total sequences read.
+Dereplicating sequence entries in Fastq file: FD_202307_3Pool_filtered/SL1756.fastq
+Encountered 6611 unique sequences from 28495 total sequences read.
+Dereplicating sequence entries in Fastq file: FD_202307_3Pool_filtered/SL1757.fastq
+Encountered 8848 unique sequences from 48508 total sequences read.
+Dereplicating sequence entries in Fastq file: FD_202307_3Pool_filtered/SL1758.fastq
+Encountered 5492 unique sequences from 36163 total sequences read.
+Dereplicating sequence entries in Fastq file: FD_202307_3Pool_filtered/SL1759.fastq
+Encountered 12805 unique sequences from 18828 total sequences read.
+Dereplicating sequence entries in Fastq file: FD_202307_3Pool_filtered/SL1760.fastq
+Encountered 6848 unique sequences from 25866 total sequences read.
+Dereplicating sequence entries in Fastq file: FD_202307_3Pool_filtered/SL1761.fastq
+Encountered 3132 unique sequences from 15682 total sequences read.
+Dereplicating sequence entries in Fastq file: FD_202307_3Pool_filtered/SL1762.fastq
+Encountered 9325 unique sequences from 50676 total sequences read.
+Dereplicating sequence entries in Fastq file: FD_202307_3Pool_filtered/SL1763.fastq
+Encountered 6849 unique sequences from 27986 total sequences read.
+Dereplicating sequence entries in Fastq file: FD_202307_3Pool_filtered/SL1764.fastq
+Encountered 4659 unique sequences from 12642 total sequences read.
+Dereplicating sequence entries in Fastq file: FD_202307_3Pool_filtered/SL1765.fastq
+Encountered 6441 unique sequences from 30371 total sequences read.
+Dereplicating sequence entries in Fastq file: FD_202307_3Pool_filtered/SL1766.fastq
+Encountered 6140 unique sequences from 30311 total sequences read.
+Dereplicating sequence entries in Fastq file: FD_202307_3Pool_filtered/SL1767.fastq
+Encountered 5206 unique sequences from 39354 total sequences read.
+Dereplicating sequence entries in Fastq file: FD_202307_3Pool_filtered/SL1768.fastq
+Encountered 7022 unique sequences from 49156 total sequences read.
+Dereplicating sequence entries in Fastq file: FD_202307_3Pool_filtered/SL1769.fastq
+Encountered 9003 unique sequences from 34478 total sequences read.
+Dereplicating sequence entries in Fastq file: FD_202307_3Pool_filtered/SL1770.fastq
+Encountered 4865 unique sequences from 31852 total sequences read.
+Dereplicating sequence entries in Fastq file: FD_202307_3Pool_filtered/SL1771.fastq
+Encountered 4034 unique sequences from 17264 total sequences read.
+Dereplicating sequence entries in Fastq file: FD_202307_3Pool_filtered/SL1772.fastq
+Encountered 5766 unique sequences from 23195 total sequences read.
+Dereplicating sequence entries in Fastq file: FD_202307_3Pool_filtered/SL1773.fastq
+Encountered 17828 unique sequences from 29492 total sequences read.
+Dereplicating sequence entries in Fastq file: FD_202307_3Pool_filtered/SL1774.fastq
+Encountered 10153 unique sequences from 32452 total sequences read.
+Dereplicating sequence entries in Fastq file: FD_202307_3Pool_filtered/SL1775.fastq
+Encountered 3651 unique sequences from 21419 total sequences read.
+Dereplicating sequence entries in Fastq file: FD_202307_3Pool_filtered/SL1776.fastq
+Encountered 4982 unique sequences from 33473 total sequences read.
+Dereplicating sequence entries in Fastq file: FD_202307_3Pool_filtered/SL1777.fastq
+Encountered 3629 unique sequences from 23050 total sequences read.
+Dereplicating sequence entries in Fastq file: FD_202307_3Pool_filtered/SL1778.fastq
+Encountered 8558 unique sequences from 43696 total sequences read.
+Dereplicating sequence entries in Fastq file: FD_202307_3Pool_filtered/SL1779.fastq
+Encountered 5809 unique sequences from 27142 total sequences read.
+Dereplicating sequence entries in Fastq file: FD_202307_3Pool_filtered/SL1780.fastq
+Encountered 4773 unique sequences from 35319 total sequences read.
+Dereplicating sequence entries in Fastq file: FD_202307_3Pool_filtered/SL1781.fastq
+Encountered 5840 unique sequences from 29966 total sequences read.
+Dereplicating sequence entries in Fastq file: FD_202307_3Pool_filtered/SL1782.fastq
+Encountered 3712 unique sequences from 18308 total sequences read.
+Dereplicating sequence entries in Fastq file: FD_202307_3Pool_filtered/SL1783.fastq
+Encountered 4802 unique sequences from 31010 total sequences read.
+Dereplicating sequence entries in Fastq file: FD_202307_3Pool_filtered/SL1784.fastq
+Encountered 8211 unique sequences from 70937 total sequences read.
+Dereplicating sequence entries in Fastq file: FD_202307_3Pool_filtered/SL1785.fastq
+Encountered 5545 unique sequences from 29343 total sequences read.
+Dereplicating sequence entries in Fastq file: FD_202307_3Pool_filtered/SL1786.fastq
+Encountered 4913 unique sequences from 27674 total sequences read.
+Dereplicating sequence entries in Fastq file: FD_202307_3Pool_filtered/SL1787.fastq
+Encountered 5981 unique sequences from 26526 total sequences read.
+Dereplicating sequence entries in Fastq file: FD_202307_3Pool_filtered/SL1788.fastq
+Encountered 6339 unique sequences from 32730 total sequences read.
+Dereplicating sequence entries in Fastq file: FD_202307_3Pool_filtered/SL1789.fastq
+Encountered 11063 unique sequences from 80458 total sequences read.
+Dereplicating sequence entries in Fastq file: FD_202307_3Pool_filtered/SL1790.fastq
+Encountered 4584 unique sequences from 11531 total sequences read.
+Dereplicating sequence entries in Fastq file: FD_202307_3Pool_filtered/SL1791.fastq
+Encountered 4506 unique sequences from 14311 total sequences read.
+Dereplicating sequence entries in Fastq file: FD_202307_3Pool_filtered/SL1792.fastq
+Encountered 7655 unique sequences from 13007 total sequences read.
+Dereplicating sequence entries in Fastq file: FD_202307_3Pool_filtered/SL1793.fastq
+Encountered 11577 unique sequences from 60864 total sequences read.
+Dereplicating sequence entries in Fastq file: FD_202307_3Pool_filtered/SL1794.fastq
+Encountered 8755 unique sequences from 51412 total sequences read.
+Dereplicating sequence entries in Fastq file: FD_202307_3Pool_filtered/SL1795.fastq
+Encountered 9303 unique sequences from 46619 total sequences read.
+Dereplicating sequence entries in Fastq file: FD_202307_3Pool_filtered/SL1796.fastq
+Encountered 5131 unique sequences from 6108 total sequences read.
+Dereplicating sequence entries in Fastq file: FD_202307_3Pool_filtered/SL1797.fastq
+Encountered 3610 unique sequences from 19452 total sequences read.
+Dereplicating sequence entries in Fastq file: FD_202307_3Pool_filtered/SL1798.fastq
+Encountered 6971 unique sequences from 37535 total sequences read.
+Dereplicating sequence entries in Fastq file: FD_202307_3Pool_filtered/SL1799.fastq
+Encountered 6083 unique sequences from 33036 total sequences read.
+Dereplicating sequence entries in Fastq file: FD_202307_3Pool_filtered/SL1800.fastq
+Encountered 1516 unique sequences from 6731 total sequences read.
+Dereplicating sequence entries in Fastq file: FD_202307_3Pool_filtered/SL1801.fastq
+Encountered 4352 unique sequences from 18686 total sequences read.
+Dereplicating sequence entries in Fastq file: FD_202307_3Pool_filtered/SL1802.fastq
+Encountered 5724 unique sequences from 31156 total sequences read.
+Dereplicating sequence entries in Fastq file: FD_202307_3Pool_filtered/SL1803.fastq
+Encountered 2934 unique sequences from 16003 total sequences read.
+Dereplicating sequence entries in Fastq file: FD_202307_3Pool_filtered/SL1804.fastq
+Encountered 8092 unique sequences from 28703 total sequences read.
+Dereplicating sequence entries in Fastq file: FD_202307_3Pool_filtered/SL1805.fastq
+Encountered 2595 unique sequences from 18197 total sequences read.
+Dereplicating sequence entries in Fastq file: FD_202307_3Pool_filtered/SL1806.fastq
+Encountered 10717 unique sequences from 81137 total sequences read.
+Dereplicating sequence entries in Fastq file: FD_202307_3Pool_filtered/SL1807.fastq
+Encountered 3723 unique sequences from 15663 total sequences read.
+Dereplicating sequence entries in Fastq file: FD_202307_3Pool_filtered/SL1808.fastq
+Encountered 4661 unique sequences from 36077 total sequences read.
+Dereplicating sequence entries in Fastq file: FD_202307_3Pool_filtered/SL1809.fastq
+Encountered 6506 unique sequences from 37288 total sequences read.
+Dereplicating sequence entries in Fastq file: FD_202307_3Pool_filtered/SL1810.fastq
+Encountered 3919 unique sequences from 20889 total sequences read.
+Dereplicating sequence entries in Fastq file: FD_202307_3Pool_filtered/SL1811.fastq
+Encountered 5388 unique sequences from 40119 total sequences read.
+Dereplicating sequence entries in Fastq file: FD_202307_3Pool_filtered/SL1812.fastq
+Encountered 7136 unique sequences from 11369 total sequences read.
+Dereplicating sequence entries in Fastq file: FD_202307_3Pool_filtered/SL1813.fastq
+Encountered 3421 unique sequences from 16405 total sequences read.
+Dereplicating sequence entries in Fastq file: FD_202307_3Pool_filtered/SL1814.fastq
+Encountered 2071 unique sequences from 6637 total sequences read.
+Dereplicating sequence entries in Fastq file: FD_202307_3Pool_filtered/SL1815.fastq
+Encountered 3210 unique sequences from 16100 total sequences read.
+Dereplicating sequence entries in Fastq file: FD_202307_3Pool_filtered/SL1816.fastq
+Encountered 5462 unique sequences from 36541 total sequences read.
+Dereplicating sequence entries in Fastq file: FD_202307_3Pool_filtered/SL1817.fastq
+Encountered 4887 unique sequences from 23757 total sequences read.
+Dereplicating sequence entries in Fastq file: FD_202307_3Pool_filtered/SL1818.fastq
+Encountered 4858 unique sequences from 32623 total sequences read.
+Dereplicating sequence entries in Fastq file: FD_202307_3Pool_filtered/SL1819.fastq
+Encountered 3272 unique sequences from 24080 total sequences read.
+Dereplicating sequence entries in Fastq file: FD_202307_3Pool_filtered/SL1820.fastq
+Encountered 8353 unique sequences from 23341 total sequences read.
+Dereplicating sequence entries in Fastq file: FD_202307_3Pool_filtered/SL1821.fastq
+Encountered 2758 unique sequences from 16841 total sequences read.
+Dereplicating sequence entries in Fastq file: FD_202307_3Pool_filtered/SL1822.fastq
+Encountered 1879 unique sequences from 9442 total sequences read.
+Dereplicating sequence entries in Fastq file: FD_202307_3Pool_filtered/SL1823.fastq
+Encountered 3796 unique sequences from 20861 total sequences read.
+Dereplicating sequence entries in Fastq file: FD_202307_3Pool_filtered/SL1824.fastq
+Encountered 3504 unique sequences from 23063 total sequences read.
+Dereplicating sequence entries in Fastq file: FD_202307_3Pool_filtered/SL1825.fastq
+Encountered 3327 unique sequences from 19684 total sequences read.
+Dereplicating sequence entries in Fastq file: FD_202307_3Pool_filtered/SL1826.fastq
+Encountered 4484 unique sequences from 29076 total sequences read.
+Dereplicating sequence entries in Fastq file: FD_202307_3Pool_filtered/SL1827.fastq
+Encountered 3685 unique sequences from 16917 total sequences read.
+Dereplicating sequence entries in Fastq file: FD_202307_3Pool_filtered/SL1828.fastq
+Encountered 3340 unique sequences from 3782 total sequences read.
+Dereplicating sequence entries in Fastq file: FD_202307_3Pool_filtered/SL1829.fastq
+Encountered 6624 unique sequences from 38512 total sequences read.
+Dereplicating sequence entries in Fastq file: FD_202307_3Pool_filtered/SL1830.fastq
+Encountered 3029 unique sequences from 16928 total sequences read.
+Dereplicating sequence entries in Fastq file: FD_202307_3Pool_filtered/SL1831.fastq
+Encountered 2791 unique sequences from 13095 total sequences read.
+Dereplicating sequence entries in Fastq file: FD_202307_3Pool_filtered/SL1832.fastq
+Encountered 5658 unique sequences from 24163 total sequences read.
+Dereplicating sequence entries in Fastq file: FD_202307_3Pool_filtered/SL1833.fastq
+Encountered 4009 unique sequences from 14247 total sequences read.
+Dereplicating sequence entries in Fastq file: FD_202307_3Pool_filtered/SL1834.fastq
+Encountered 2580 unique sequences from 11362 total sequences read.
+Dereplicating sequence entries in Fastq file: FD_202307_3Pool_filtered/SL1835.fastq
+Encountered 9144 unique sequences from 44890 total sequences read.
+Dereplicating sequence entries in Fastq file: FD_202307_3Pool_filtered/SL1836.fastq
+Encountered 2754 unique sequences from 4224 total sequences read.
+Dereplicating sequence entries in Fastq file: FD_202307_3Pool_filtered/SL1837.fastq
+Encountered 5906 unique sequences from 25800 total sequences read.
+Dereplicating sequence entries in Fastq file: FD_202307_3Pool_filtered/SL1838.fastq
+Encountered 6971 unique sequences from 30000 total sequences read.
+Dereplicating sequence entries in Fastq file: FD_202307_3Pool_filtered/SL1839.fastq
+Encountered 3844 unique sequences from 24084 total sequences read.
+Dereplicating sequence entries in Fastq file: FD_202307_3Pool_filtered/SL1840.fastq
+Encountered 5381 unique sequences from 27761 total sequences read.
+Dereplicating sequence entries in Fastq file: FD_202307_3Pool_filtered/SL1841.fastq
+Encountered 9757 unique sequences from 52942 total sequences read.
+Dereplicating sequence entries in Fastq file: FD_202307_3Pool_filtered/SL1842.fastq
+Encountered 5403 unique sequences from 28963 total sequences read.
+Dereplicating sequence entries in Fastq file: FD_202307_3Pool_filtered/SL1843.fastq
+Encountered 8863 unique sequences from 59043 total sequences read.
+Dereplicating sequence entries in Fastq file: FD_202307_3Pool_filtered/SL1844.fastq
+Encountered 7024 unique sequences from 22555 total sequences read.
+Dereplicating sequence entries in Fastq file: FD_202307_3Pool_filtered/SL1845.fastq
+Encountered 6259 unique sequences from 35722 total sequences read.
+Dereplicating sequence entries in Fastq file: FD_202307_3Pool_filtered/SL1846.fastq
+Encountered 2807 unique sequences from 14242 total sequences read.
+Dereplicating sequence entries in Fastq file: FD_202307_3Pool_filtered/SL1847.fastq
+Encountered 3521 unique sequences from 17597 total sequences read.
+Dereplicating sequence entries in Fastq file: FD_202307_3Pool_filtered/SL1848.fastq
+Encountered 2405 unique sequences from 21503 total sequences read.
+Dereplicating sequence entries in Fastq file: FD_202307_3Pool_filtered/SL1849.fastq
+Encountered 4842 unique sequences from 16041 total sequences read.
+Dereplicating sequence entries in Fastq file: FD_202307_3Pool_filtered/SL1850.fastq
+Encountered 4807 unique sequences from 24685 total sequences read.
+Dereplicating sequence entries in Fastq file: FD_202307_3Pool_filtered/SL1851.fastq
+Encountered 4894 unique sequences from 23148 total sequences read.
+Dereplicating sequence entries in Fastq file: FD_202307_3Pool_filtered/SL1852.fastq
+Encountered 12662 unique sequences from 17549 total sequences read.
+Dereplicating sequence entries in Fastq file: FD_202307_3Pool_filtered/SL1853.fastq
+Encountered 6545 unique sequences from 37100 total sequences read.
+Dereplicating sequence entries in Fastq file: FD_202307_3Pool_filtered/SL1854.fastq
+Encountered 2537 unique sequences from 15477 total sequences read.
+Dereplicating sequence entries in Fastq file: FD_202307_3Pool_filtered/SL1855.fastq
+Encountered 1949 unique sequences from 12390 total sequences read.
+Dereplicating sequence entries in Fastq file: FD_202307_3Pool_filtered/SL1856.fastq
+Encountered 50 unique sequences from 56 total sequences read.
+Dereplicating sequence entries in Fastq file: FD_202307_3Pool_filtered/SL1857.fastq
+Encountered 4121 unique sequences from 4810 total sequences read.
+Dereplicating sequence entries in Fastq file: FD_202307_3Pool_filtered/SL1858.fastq
+Encountered 3899 unique sequences from 10955 total sequences read.
+Dereplicating sequence entries in Fastq file: FD_202307_3Pool_filtered/SL1859.fastq
+Encountered 2822 unique sequences from 10340 total sequences read.
+Dereplicating sequence entries in Fastq file: FD_202307_3Pool_filtered/SL1860.fastq
+Encountered 8548 unique sequences from 10979 total sequences read.
+Dereplicating sequence entries in Fastq file: FD_202307_3Pool_filtered/SL1861.fastq
+Encountered 2999 unique sequences from 16539 total sequences read.
+Dereplicating sequence entries in Fastq file: FD_202307_3Pool_filtered/SL1862.fastq
+Encountered 747 unique sequences from 904 total sequences read.
+Dereplicating sequence entries in Fastq file: FD_202307_3Pool_filtered/SL1863.fastq
+Encountered 5713 unique sequences from 60188 total sequences read.
+Dereplicating sequence entries in Fastq file: FD_202307_3Pool_filtered/SL1864.fastq
+Encountered 2787 unique sequences from 15841 total sequences read.
+Dereplicating sequence entries in Fastq file: FD_202307_3Pool_filtered/SL1865.fastq
+Encountered 5564 unique sequences from 28260 total sequences read.
+Dereplicating sequence entries in Fastq file: FD_202307_3Pool_filtered/SL1866.fastq
+Encountered 4265 unique sequences from 22677 total sequences read.
+Dereplicating sequence entries in Fastq file: FD_202307_3Pool_filtered/SL1867.fastq
+Encountered 5098 unique sequences from 34450 total sequences read.
+Dereplicating sequence entries in Fastq file: FD_202307_3Pool_filtered/SL1868.fastq
+Encountered 5331 unique sequences from 22273 total sequences read.
+Dereplicating sequence entries in Fastq file: FD_202307_3Pool_filtered/SL1869.fastq
+Encountered 3647 unique sequences from 20750 total sequences read.
+Dereplicating sequence entries in Fastq file: FD_202307_3Pool_filtered/SL1870.fastq
+Encountered 2482 unique sequences from 12914 total sequences read.
+Dereplicating sequence entries in Fastq file: FD_202307_3Pool_filtered/SL1871.fastq
+Encountered 8961 unique sequences from 52650 total sequences read.
+Dereplicating sequence entries in Fastq file: FD_202307_3Pool_filtered/SL1872.fastq
+Encountered 20 unique sequences from 20 total sequences read.
+Dereplicating sequence entries in Fastq file: FD_202307_3Pool_filtered/SL1873.fastq
+Encountered 2776 unique sequences from 12995 total sequences read.
+Dereplicating sequence entries in Fastq file: FD_202307_3Pool_filtered/SL1874.fastq
+Encountered 2590 unique sequences from 10556 total sequences read.
+Dereplicating sequence entries in Fastq file: FD_202307_3Pool_filtered/SL1875.fastq
+Encountered 5188 unique sequences from 31230 total sequences read.
+Dereplicating sequence entries in Fastq file: FD_202307_3Pool_filtered/SL1876.fastq
+Encountered 7639 unique sequences from 9733 total sequences read.
+Dereplicating sequence entries in Fastq file: FD_202307_3Pool_filtered/SL1877.fastq
+Encountered 4518 unique sequences from 22677 total sequences read.
+Dereplicating sequence entries in Fastq file: FD_202307_3Pool_filtered/SL1878.fastq
+Encountered 3065 unique sequences from 14630 total sequences read.
+Dereplicating sequence entries in Fastq file: FD_202307_3Pool_filtered/SL1879.fastq
+Encountered 3359 unique sequences from 22133 total sequences read.
+Dereplicating sequence entries in Fastq file: FD_202307_3Pool_filtered/SL1880.fastq
+Encountered 8221 unique sequences from 61358 total sequences read.
+Dereplicating sequence entries in Fastq file: FD_202307_3Pool_filtered/SL1881.fastq
+Encountered 5183 unique sequences from 30384 total sequences read.
+Dereplicating sequence entries in Fastq file: FD_202307_3Pool_filtered/SL1882.fastq
+Encountered 2179 unique sequences from 14519 total sequences read.
+Dereplicating sequence entries in Fastq file: FD_202307_3Pool_filtered/SL1883.fastq
+Encountered 3229 unique sequences from 27512 total sequences read.
+Dereplicating sequence entries in Fastq file: FD_202307_3Pool_filtered/SL1884.fastq
+Encountered 5987 unique sequences from 44438 total sequences read.
+Dereplicating sequence entries in Fastq file: FD_202307_3Pool_filtered/SL1885.fastq
+Encountered 10728 unique sequences from 58471 total sequences read.
+Dereplicating sequence entries in Fastq file: FD_202307_3Pool_filtered/SL1886.fastq
+Encountered 11264 unique sequences from 92176 total sequences read.
+Dereplicating sequence entries in Fastq file: FD_202307_3Pool_filtered/SL1887.fastq
+Encountered 14666 unique sequences from 86728 total sequences read.
+Dereplicating sequence entries in Fastq file: FD_202307_3Pool_filtered/SL1888.fastq
+Encountered 8178 unique sequences from 77396 total sequences read.
+Dereplicating sequence entries in Fastq file: FD_202307_3Pool_filtered/SL1889.fastq
+Encountered 8917 unique sequences from 59425 total sequences read.
+Dereplicating sequence entries in Fastq file: FD_202307_3Pool_filtered/SL1890.fastq
+Encountered 8276 unique sequences from 60583 total sequences read.
+Dereplicating sequence entries in Fastq file: FD_202307_3Pool_filtered/SL1891.fastq
+Encountered 5114 unique sequences from 39392 total sequences read.
+Dereplicating sequence entries in Fastq file: FD_202307_3Pool_filtered/SL1892.fastq
+Encountered 7073 unique sequences from 31764 total sequences read.
+Dereplicating sequence entries in Fastq file: FD_202307_3Pool_filtered/SL1893.fastq
+Encountered 8936 unique sequences from 62720 total sequences read.
+Dereplicating sequence entries in Fastq file: FD_202307_3Pool_filtered/SL1894.fastq
+Encountered 6173 unique sequences from 42296 total sequences read.
+Dereplicating sequence entries in Fastq file: FD_202307_3Pool_filtered/SL1895.fastq
+Encountered 7993 unique sequences from 38704 total sequences read.
+Dereplicating sequence entries in Fastq file: FD_202307_3Pool_filtered/SL1896.fastq
+Encountered 8935 unique sequences from 52521 total sequences read.
+Dereplicating sequence entries in Fastq file: FD_202307_3Pool_filtered/SL1897.fastq
+Encountered 9418 unique sequences from 61280 total sequences read.
+Dereplicating sequence entries in Fastq file: FD_202307_3Pool_filtered/SL1898.fastq
+Encountered 8466 unique sequences from 39655 total sequences read.
+Dereplicating sequence entries in Fastq file: FD_202307_3Pool_filtered/SL1899.fastq
+Encountered 4736 unique sequences from 36718 total sequences read.
+Dereplicating sequence entries in Fastq file: FD_202307_3Pool_filtered/SL1900.fastq
+Encountered 9687 unique sequences from 68935 total sequences read.
+Dereplicating sequence entries in Fastq file: FD_202307_3Pool_filtered/SL1901.fastq
+Encountered 5429 unique sequences from 30816 total sequences read.
+Dereplicating sequence entries in Fastq file: FD_202307_3Pool_filtered/SL1902.fastq
+Encountered 12851 unique sequences from 34435 total sequences read.
+Dereplicating sequence entries in Fastq file: FD_202307_3Pool_filtered/SL1903.fastq
+Encountered 13798 unique sequences from 67729 total sequences read.
+Dereplicating sequence entries in Fastq file: FD_202307_3Pool_filtered/SL1904.fastq
+Encountered 6897 unique sequences from 43816 total sequences read.
+Dereplicating sequence entries in Fastq file: FD_202307_3Pool_filtered/SL1905.fastq
+Encountered 6729 unique sequences from 50379 total sequences read.
+Dereplicating sequence entries in Fastq file: FD_202307_3Pool_filtered/SL1906.fastq
+Encountered 11401 unique sequences from 89514 total sequences read.
+Dereplicating sequence entries in Fastq file: FD_202307_3Pool_filtered/SL1907.fastq
+Encountered 5036 unique sequences from 50379 total sequences read.
+Dereplicating sequence entries in Fastq file: FD_202307_3Pool_filtered/SL1908.fastq
+Encountered 5333 unique sequences from 50730 total sequences read.
+Dereplicating sequence entries in Fastq file: FD_202307_3Pool_filtered/SL1909.fastq
+Encountered 11208 unique sequences from 52565 total sequences read.
+Dereplicating sequence entries in Fastq file: FD_202307_3Pool_filtered/SL1910.fastq
+Encountered 10768 unique sequences from 66565 total sequences read.
+Dereplicating sequence entries in Fastq file: FD_202307_3Pool_filtered/SL1911.fastq
+Encountered 5848 unique sequences from 43031 total sequences read.
+Dereplicating sequence entries in Fastq file: FD_202307_3Pool_filtered/SL1912.fastq
+Encountered 7109 unique sequences from 43992 total sequences read.
+Dereplicating sequence entries in Fastq file: FD_202307_3Pool_filtered/SL1913.fastq
+Encountered 12196 unique sequences from 62431 total sequences read.
+Dereplicating sequence entries in Fastq file: FD_202307_3Pool_filtered/SL1914.fastq
+Encountered 8358 unique sequences from 38834 total sequences read.
+Dereplicating sequence entries in Fastq file: FD_202307_3Pool_filtered/SL1915.fastq
+Encountered 11 unique sequences from 12 total sequences read.
+Dereplicating sequence entries in Fastq file: FD_202307_3Pool_filtered/SL1917.fastq
+Encountered 4990 unique sequences from 25891 total sequences read.
+Dereplicating sequence entries in Fastq file: FD_202307_3Pool_filtered/SL1918.fastq
+Encountered 8321 unique sequences from 48582 total sequences read.
+Dereplicating sequence entries in Fastq file: FD_202307_3Pool_filtered/SL1919.fastq
+Encountered 6086 unique sequences from 38064 total sequences read.
+Dereplicating sequence entries in Fastq file: FD_202307_3Pool_filtered/SL1920.fastq
+Encountered 6991 unique sequences from 41641 total sequences read.
+Dereplicating sequence entries in Fastq file: FD_202307_3Pool_filtered/SL1921.fastq
+Encountered 7999 unique sequences from 45413 total sequences read.
+Dereplicating sequence entries in Fastq file: FD_202307_3Pool_filtered/SL1922.fastq
+Encountered 11836 unique sequences from 37436 total sequences read.
+Dereplicating sequence entries in Fastq file: FD_202307_3Pool_filtered/SL1923.fastq
+Encountered 9221 unique sequences from 58431 total sequences read.
+Dereplicating sequence entries in Fastq file: FD_202307_3Pool_filtered/SL1924.fastq
+Encountered 10484 unique sequences from 23097 total sequences read.
+Dereplicating sequence entries in Fastq file: FD_202307_3Pool_filtered/SL1925.fastq
+Encountered 6647 unique sequences from 44792 total sequences read.
+Dereplicating sequence entries in Fastq file: FD_202307_3Pool_filtered/SL1926.fastq
+Encountered 4700 unique sequences from 40741 total sequences read.
+Dereplicating sequence entries in Fastq file: FD_202307_3Pool_filtered/SL1927.fastq
+Encountered 7272 unique sequences from 56966 total sequences read.
+Dereplicating sequence entries in Fastq file: FD_202307_3Pool_filtered/SL1928.fastq
+Encountered 4986 unique sequences from 46486 total sequences read.
+Dereplicating sequence entries in Fastq file: FD_202307_3Pool_filtered/SL1929.fastq
+Encountered 7410 unique sequences from 10852 total sequences read.
+Dereplicating sequence entries in Fastq file: FD_202307_3Pool_filtered/SL1930.fastq
+Encountered 6381 unique sequences from 47202 total sequences read.
+Dereplicating sequence entries in Fastq file: FD_202307_3Pool_filtered/SL1931.fastq
+Encountered 7212 unique sequences from 48226 total sequences read.
+Dereplicating sequence entries in Fastq file: FD_202307_3Pool_filtered/SL1932.fastq
+Encountered 2297 unique sequences from 16924 total sequences read.
+Dereplicating sequence entries in Fastq file: FD_202307_3Pool_filtered/SL1933.fastq
+Encountered 8249 unique sequences from 68633 total sequences read.
+Dereplicating sequence entries in Fastq file: FD_202307_3Pool_filtered/SL1934.fastq
+Encountered 6348 unique sequences from 38393 total sequences read.
+Dereplicating sequence entries in Fastq file: FD_202307_3Pool_filtered/SL1935.fastq
+Encountered 12111 unique sequences from 76751 total sequences read.
+Dereplicating sequence entries in Fastq file: FD_202307_3Pool_filtered/SL1937.fastq
+Encountered 5577 unique sequences from 48548 total sequences read.
+Dereplicating sequence entries in Fastq file: FD_202307_3Pool_filtered/SL1938.fastq
+Encountered 192 unique sequences from 197 total sequences read.
+Dereplicating sequence entries in Fastq file: FD_202307_3Pool_filtered/SL1939.fastq
+Encountered 4944 unique sequences from 31369 total sequences read.
+Dereplicating sequence entries in Fastq file: FD_202307_3Pool_filtered/SL1940.fastq
+Encountered 2925 unique sequences from 23999 total sequences read.
+Dereplicating sequence entries in Fastq file: FD_202307_3Pool_filtered/SL1941.fastq
+Encountered 9978 unique sequences from 72334 total sequences read.
+Dereplicating sequence entries in Fastq file: FD_202307_3Pool_filtered/SL1942.fastq
+Encountered 5859 unique sequences from 46529 total sequences read.
+Dereplicating sequence entries in Fastq file: FD_202307_3Pool_filtered/SL1943.fastq
+Encountered 2374 unique sequences from 13403 total sequences read.
+Dereplicating sequence entries in Fastq file: FD_202307_3Pool_filtered/SL1944.fastq
+Encountered 11083 unique sequences from 37995 total sequences read.
+Dereplicating sequence entries in Fastq file: FD_202307_3Pool_filtered/SL1945.fastq
+Encountered 6549 unique sequences from 41814 total sequences read.
+Dereplicating sequence entries in Fastq file: FD_202307_3Pool_filtered/SL1946.fastq
+Encountered 8749 unique sequences from 56846 total sequences read.
+Dereplicating sequence entries in Fastq file: FD_202307_3Pool_filtered/SL1947.fastq
+Encountered 8198 unique sequences from 69327 total sequences read.
+Dereplicating sequence entries in Fastq file: FD_202307_3Pool_filtered/SL1948.fastq
+Encountered 6299 unique sequences from 36753 total sequences read.
+Dereplicating sequence entries in Fastq file: FD_202307_3Pool_filtered/SL1949.fastq
+Encountered 7631 unique sequences from 38144 total sequences read.
+Dereplicating sequence entries in Fastq file: FD_202307_3Pool_filtered/SL1950.fastq
+Encountered 2644 unique sequences from 22371 total sequences read.
+Dereplicating sequence entries in Fastq file: FD_202307_3Pool_filtered/SL1951.fastq
+Encountered 6712 unique sequences from 39615 total sequences read.
+Dereplicating sequence entries in Fastq file: FD_202307_3Pool_filtered/SL1952.fastq
+Encountered 3024 unique sequences from 16384 total sequences read.
+Dereplicating sequence entries in Fastq file: FD_202307_3Pool_filtered/SL1953.fastq
+Encountered 5317 unique sequences from 46409 total sequences read.
+Dereplicating sequence entries in Fastq file: FD_202307_3Pool_filtered/SL1954.fastq
+Encountered 3219 unique sequences from 22770 total sequences read.
+Dereplicating sequence entries in Fastq file: FD_202307_3Pool_filtered/SL1955.fastq
+Encountered 6133 unique sequences from 37322 total sequences read.
+Dereplicating sequence entries in Fastq file: FD_202307_3Pool_filtered/SL1956.fastq
+Encountered 5540 unique sequences from 58443 total sequences read.
+Dereplicating sequence entries in Fastq file: FD_202307_3Pool_filtered/SL1957.fastq
+Encountered 7514 unique sequences from 51474 total sequences read.
+Dereplicating sequence entries in Fastq file: FD_202307_3Pool_filtered/SL1958.fastq
+Encountered 9270 unique sequences from 54872 total sequences read.
+Dereplicating sequence entries in Fastq file: FD_202307_3Pool_filtered/SL1959.fastq
+Encountered 9594 unique sequences from 99627 total sequences read.
+Dereplicating sequence entries in Fastq file: FD_202307_3Pool_filtered/SL1960.fastq
+Encountered 4613 unique sequences from 33431 total sequences read.
+Dereplicating sequence entries in Fastq file: FD_202307_3Pool_filtered/SL1961.fastq
+Encountered 14754 unique sequences from 64258 total sequences read.
+Dereplicating sequence entries in Fastq file: FD_202307_3Pool_filtered/SL1962.fastq
+Encountered 1954 unique sequences from 2196 total sequences read.
+Dereplicating sequence entries in Fastq file: FD_202307_3Pool_filtered/SL1963.fastq
+Encountered 7971 unique sequences from 72824 total sequences read.
+Dereplicating sequence entries in Fastq file: FD_202307_3Pool_filtered/SL1964.fastq
+Encountered 7007 unique sequences from 38149 total sequences read.
+Dereplicating sequence entries in Fastq file: FD_202307_3Pool_filtered/SL1965.fastq
+Encountered 6768 unique sequences from 9848 total sequences read.
+Dereplicating sequence entries in Fastq file: FD_202307_3Pool_filtered/SL1966.fastq
+Encountered 2984 unique sequences from 28767 total sequences read.
+Dereplicating sequence entries in Fastq file: FD_202307_3Pool_filtered/SL1967.fastq
+Encountered 9029 unique sequences from 44857 total sequences read.
+Dereplicating sequence entries in Fastq file: FD_202307_3Pool_filtered/SL1968.fastq
+Encountered 6929 unique sequences from 49607 total sequences read.
+Dereplicating sequence entries in Fastq file: FD_202307_3Pool_filtered/SL1969.fastq
+Encountered 3653 unique sequences from 32504 total sequences read.
+Dereplicating sequence entries in Fastq file: FD_202307_3Pool_filtered/SL1970.fastq
+Encountered 4791 unique sequences from 26667 total sequences read.
+Dereplicating sequence entries in Fastq file: FD_202307_3Pool_filtered/SL1971.fastq
+Encountered 5072 unique sequences from 21178 total sequences read.
+Dereplicating sequence entries in Fastq file: FD_202307_3Pool_filtered/SL1972.fastq
+Encountered 3180 unique sequences from 17935 total sequences read.
+Dereplicating sequence entries in Fastq file: FD_202307_3Pool_filtered/SL1973.fastq
+Encountered 6705 unique sequences from 56833 total sequences read.
+Dereplicating sequence entries in Fastq file: FD_202307_3Pool_filtered/SL1974.fastq
+Encountered 7833 unique sequences from 65442 total sequences read.
+Dereplicating sequence entries in Fastq file: FD_202307_3Pool_filtered/SL1975.fastq
+Encountered 5333 unique sequences from 29820 total sequences read.
+Dereplicating sequence entries in Fastq file: FD_202307_3Pool_filtered/SL1976.fastq
+Encountered 2241 unique sequences from 3229 total sequences read.
+Dereplicating sequence entries in Fastq file: FD_202307_3Pool_filtered/SL1977.fastq
+Encountered 13251 unique sequences from 75788 total sequences read.
+Dereplicating sequence entries in Fastq file: FD_202307_3Pool_filtered/SL1978.fastq
+Encountered 10583 unique sequences from 66151 total sequences read.
+Dereplicating sequence entries in Fastq file: FD_202307_3Pool_filtered/SL1979.fastq
+Encountered 3153 unique sequences from 31578 total sequences read.
+Dereplicating sequence entries in Fastq file: FD_202307_3Pool_filtered/SL1980.fastq
+Encountered 6920 unique sequences from 49004 total sequences read.
+Dereplicating sequence entries in Fastq file: FD_202307_3Pool_filtered/SL1981.fastq
+Encountered 7513 unique sequences from 50066 total sequences read.
+Dereplicating sequence entries in Fastq file: FD_202307_3Pool_filtered/SL1982.fastq
+Encountered 6549 unique sequences from 38759 total sequences read.
+Dereplicating sequence entries in Fastq file: FD_202307_3Pool_filtered/SL1983.fastq
+Encountered 1968 unique sequences from 10808 total sequences read.
+Dereplicating sequence entries in Fastq file: FD_202307_3Pool_filtered/SL1984.fastq
+Encountered 5871 unique sequences from 28706 total sequences read.
+Dereplicating sequence entries in Fastq file: FD_202307_3Pool_filtered/SL1985.fastq
+Encountered 1943 unique sequences from 11794 total sequences read.
+Dereplicating sequence entries in Fastq file: FD_202307_3Pool_filtered/SL1986.fastq
+Encountered 5251 unique sequences from 34199 total sequences read.
+Dereplicating sequence entries in Fastq file: FD_202307_3Pool_filtered/SL1987.fastq
+Encountered 5566 unique sequences from 38598 total sequences read.
+Dereplicating sequence entries in Fastq file: FD_202307_3Pool_filtered/SL1988.fastq
+Encountered 1846 unique sequences from 8628 total sequences read.
+Dereplicating sequence entries in Fastq file: FD_202307_3Pool_filtered/SL1989.fastq
+Encountered 8556 unique sequences from 25198 total sequences read.
+Dereplicating sequence entries in Fastq file: FD_202307_3Pool_filtered/SL1990.fastq
+Encountered 5396 unique sequences from 27859 total sequences read.
+Dereplicating sequence entries in Fastq file: FD_202307_3Pool_filtered/SL1991.fastq
+Encountered 6271 unique sequences from 43018 total sequences read.
+Dereplicating sequence entries in Fastq file: FD_202307_3Pool_filtered/SL1992.fastq
+Encountered 3751 unique sequences from 23103 total sequences read.
+Dereplicating sequence entries in Fastq file: FD_202307_3Pool_filtered/SL1993.fastq
+Encountered 70 unique sequences from 71 total sequences read.
+Dereplicating sequence entries in Fastq file: FD_202307_3Pool_filtered/SL1994.fastq
+Encountered 8225 unique sequences from 74138 total sequences read.
+Dereplicating sequence entries in Fastq file: FD_202307_3Pool_filtered/SL1995.fastq
+Encountered 9020 unique sequences from 15607 total sequences read.
+Dereplicating sequence entries in Fastq file: FD_202307_3Pool_filtered/SL1996.fastq
+Encountered 3498 unique sequences from 17345 total sequences read.
+Dereplicating sequence entries in Fastq file: FD_202307_3Pool_filtered/SL1997.fastq
+Encountered 5657 unique sequences from 24835 total sequences read.
+Dereplicating sequence entries in Fastq file: FD_202307_3Pool_filtered/SL1998.fastq
+Encountered 5348 unique sequences from 31984 total sequences read.
+Dereplicating sequence entries in Fastq file: FD_202307_3Pool_filtered/SL1999.fastq
+Encountered 1610 unique sequences from 5376 total sequences read.
+Dereplicating sequence entries in Fastq file: FD_202307_3Pool_filtered/SL2000.fastq
+Encountered 3984 unique sequences from 17120 total sequences read.
+Dereplicating sequence entries in Fastq file: FD_202307_3Pool_filtered/SL2001.fastq
+Encountered 3387 unique sequences from 19401 total sequences read.
+Dereplicating sequence entries in Fastq file: FD_202307_3Pool_filtered/SL2002.fastq
+Encountered 5816 unique sequences from 38554 total sequences read.
+Dereplicating sequence entries in Fastq file: FD_202307_3Pool_filtered/SL2003.fastq
+Encountered 2098 unique sequences from 12460 total sequences read.
+Dereplicating sequence entries in Fastq file: FD_202307_3Pool_filtered/SL2004.fastq
+Encountered 1306 unique sequences from 4805 total sequences read.
+Dereplicating sequence entries in Fastq file: FD_202307_3Pool_filtered/SL2005.fastq
+Encountered 12622 unique sequences from 59842 total sequences read.
+Dereplicating sequence entries in Fastq file: FD_202307_3Pool_filtered/SL2006.fastq
+Encountered 10540 unique sequences from 61187 total sequences read.
+Dereplicating sequence entries in Fastq file: FD_202307_3Pool_filtered/SL2007.fastq
+Encountered 26 unique sequences from 26 total sequences read.
+Dereplicating sequence entries in Fastq file: FD_202307_3Pool_filtered/SL2008.fastq
+Encountered 3854 unique sequences from 22944 total sequences read.
+Dereplicating sequence entries in Fastq file: FD_202307_3Pool_filtered/SL2009.fastq
+Encountered 2414 unique sequences from 3282 total sequences read.
+Dereplicating sequence entries in Fastq file: FD_202307_3Pool_filtered/SL2010.fastq
+Encountered 69 unique sequences from 75 total sequences read.
+Dereplicating sequence entries in Fastq file: FD_202307_3Pool_filtered/SL2011.fastq
+Encountered 609 unique sequences from 1275 total sequences read.
+Dereplicating sequence entries in Fastq file: FD_202307_3Pool_filtered/SL2012.fastq
+Encountered 3644 unique sequences from 18989 total sequences read.
+Dereplicating sequence entries in Fastq file: FD_202307_3Pool_filtered/SL2013.fastq
+Encountered 2910 unique sequences from 16257 total sequences read.
+Dereplicating sequence entries in Fastq file: FD_202307_3Pool_filtered/SL2014.fastq
+Encountered 5253 unique sequences from 37602 total sequences read.
+Dereplicating sequence entries in Fastq file: FD_202307_3Pool_filtered/SL2015.fastq
+Encountered 5933 unique sequences from 37727 total sequences read.
+Dereplicating sequence entries in Fastq file: FD_202307_3Pool_filtered/SL2016.fastq
+Encountered 6897 unique sequences from 53228 total sequences read.
+Dereplicating sequence entries in Fastq file: FD_202307_3Pool_filtered/SL2017.fastq
+Encountered 9383 unique sequences from 57598 total sequences read.
+Dereplicating sequence entries in Fastq file: FD_202307_3Pool_filtered/SL2018.fastq
+Encountered 8476 unique sequences from 28297 total sequences read.
+Dereplicating sequence entries in Fastq file: FD_202307_3Pool_filtered/SL2019.fastq
+Encountered 5238 unique sequences from 33556 total sequences read.
+Dereplicating sequence entries in Fastq file: FD_202307_3Pool_filtered/SL2020.fastq
+Encountered 2285 unique sequences from 9629 total sequences read.
+Dereplicating sequence entries in Fastq file: FD_202307_3Pool_filtered/SL2021.fastq
+Encountered 3271 unique sequences from 9062 total sequences read.
+Dereplicating sequence entries in Fastq file: FD_202307_3Pool_filtered/SL2022.fastq
+Encountered 197 unique sequences from 525 total sequences read.
+Dereplicating sequence entries in Fastq file: FD_202307_3Pool_filtered/SL2023.fastq
+Encountered 5422 unique sequences from 9618 total sequences read.
+Dereplicating sequence entries in Fastq file: FD_202307_3Pool_filtered/SL2024.fastq
+Encountered 6577 unique sequences from 28078 total sequences read.
+Dereplicating sequence entries in Fastq file: FD_202307_3Pool_filtered/SL2025.fastq
+Encountered 2863 unique sequences from 14906 total sequences read.
+Dereplicating sequence entries in Fastq file: FD_202307_3Pool_filtered/SLP2W.fastq
+Encountered 5165 unique sequences from 12958 total sequences read.
+Dereplicating sequence entries in Fastq file: FD_202307_3Pool_filtered/SLPW1B.fastq
+Encountered 9438 unique sequences from 15488 total sequences read.
+Dereplicating sequence entries in Fastq file: FD_202307_3Pool_filtered/SLPW3A.fastq
+Encountered 13614 unique sequences from 19678 total sequences read.
+Dereplicating sequence entries in Fastq file: FD_202307_3Pool_filtered/SLPW4A.fastq
+Encountered 10887 unique sequences from 16185 total sequences read.
+Dereplicating sequence entries in Fastq file: FD_202307_3Pool_filtered/SLPW5X.fastq
+Encountered 12193 unique sequences from 27998 total sequences read.
+Dereplicating sequence entries in Fastq file: FD_202307_3Pool_filtered/SLPW6A.fastq
+Encountered 1486 unique sequences from 1695 total sequences read.
+Dereplicating sequence entries in Fastq file: FD_202307_3Pool_filtered/SLPW7.fastq
+Encountered 630 unique sequences from 736 total sequences read.
+Dereplicating sequence entries in Fastq file: FD_202307_3Pool_filtered/SLPW8.fastq
+Encountered 76 unique sequences from 85 total sequences read.
+[1] "-------------"
+[1] "Sample inference"
+[1] "FALSE"
+Initializing error rates to maximum possible estimate.
+selfConsist step 1 ...............................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................
+   selfConsist step 2
+   selfConsist step 3
+   selfConsist step 4
+   selfConsist step 5
+   selfConsist step 6
+   selfConsist step 7
+   selfConsist step 8
+   selfConsist step 9
+   selfConsist step 10
+Self-consistency loop terminated before convergence.
+$names
+  [1] "SL1501" "SL1502" "SL1503" "SL1504" "SL1505" "SL1506" "SL1507" "SL1508"
+  [9] "SL1509" "SL1510" "SL1511" "SL1512" "SL1513" "SL1514" "SL1515" "SL1516"
+ [17] "SL1517" "SL1518" "SL1519" "SL1520" "SL1521" "SL1522" "SL1523" "SL1524"
+ [25] "SL1525" "SL1526" "SL1527" "SL1528" "SL1529" "SL1530" "SL1531" "SL1532"
+ [33] "SL1533" "SL1534" "SL1535" "SL1536" "SL1537" "SL1538" "SL1539" "SL1540"
+ [41] "SL1541" "SL1542" "SL1543" "SL1544" "SL1545" "SL1546" "SL1547" "SL1548"
+ [49] "SL1549" "SL1550" "SL1551" "SL1552" "SL1553" "SL1554" "SL1555" "SL1556"
+ [57] "SL1557" "SL1558" "SL1559" "SL1560" "SL1561" "SL1562" "SL1563" "SL1564"
+ [65] "SL1565" "SL1566" "SL1567" "SL1568" "SL1569" "SL1570" "SL1571" "SL1572"
+ [73] "SL1573" "SL1574" "SL1575" "SL1576" "SL1577" "SL1578" "SL1579" "SL1580"
+ [81] "SL1581" "SL1582" "SL1583" "SL1584" "SL1585" "SL1586" "SL1587" "SL1588"
+ [89] "SL1589" "SL1590" "SL1591" "SL1592" "SL1593" "SL1594" "SL1595" "SL1596"
+ [97] "SL1597" "SL1598" "SL1599" "SL1600" "SL1601" "SL1602" "SL1603" "SL1604"
+[105] "SL1605" "SL1606" "SL1607" "SL1608" "SL1609" "SL1610" "SL1611" "SL1612"
+[113] "SL1613" "SL1614" "SL1615" "SL1616" "SL1617" "SL1618" "SL1619" "SL1620"
+[121] "SL1621" "SL1622" "SL1623" "SL1624" "SL1626" "SL1627" "SL1628" "SL1629"
+[129] "SL1630" "SL1631" "SL1632" "SL1633" "SL1634" "SL1635" "SL1636" "SL1637"
+[137] "SL1638" "SL1639" "SL1640" "SL1641" "SL1642" "SL1643" "SL1645" "SL1646"
+[145] "SL1648" "SL1649" "SL1650" "SL1651" "SL1652" "SL1653" "SL1654" "SL1656"
+[153] "SL1657" "SL1658" "SL1659" "SL1660" "SL1661" "SL1662" "SL1663" "SL1664"
+[161] "SL1665" "SL1666" "SL1667" "SL1668" "SL1669" "SL1670" "SL1671" "SL1672"
+[169] "SL1673" "SL1674" "SL1675" "SL1676" "SL1677" "SL1678" "SL1679" "SL1680"
+[177] "SL1681" "SL1682" "SL1683" "SL1684" "SL1685" "SL1686" "SL1687" "SL1688"
+[185] "SL1689" "SL1690" "SL1691" "SL1692" "SL1693" "SL1694" "SL1695" "SL1696"
+[193] "SL1697" "SL1698" "SL1699" "SL1700" "SL1701" "SL1702" "SL1703" "SL1704"
+[201] "SL1705" "SL1706" "SL1707" "SL1708" "SL1709" "SL1710" "SL1711" "SL1712"
+[209] "SL1713" "SL1714" "SL1715" "SL1716" "SL1717" "SL1718" "SL1719" "SL1720"
+[217] "SL1721" "SL1722" "SL1723" "SL1724" "SL1725" "SL1726" "SL1727" "SL1728"
+[225] "SL1729" "SL1730" "SL1731" "SL1732" "SL1733" "SL1734" "SL1735" "SL1736"
+[233] "SL1737" "SL1738" "SL1739" "SL1740" "SL1741" "SL1742" "SL1743" "SL1744"
+[241] "SL1745" "SL1746" "SL1747" "SL1748" "SL1749" "SL1750" "SL1751" "SL1752"
+[249] "SL1753" "SL1754" "SL1755" "SL1756" "SL1757" "SL1758" "SL1759" "SL1760"
+[257] "SL1761" "SL1762" "SL1763" "SL1764" "SL1765" "SL1766" "SL1767" "SL1768"
+[265] "SL1769" "SL1770" "SL1771" "SL1772" "SL1773" "SL1774" "SL1775" "SL1776"
+[273] "SL1777" "SL1778" "SL1779" "SL1780" "SL1781" "SL1782" "SL1783" "SL1784"
+[281] "SL1785" "SL1786" "SL1787" "SL1788" "SL1789" "SL1790" "SL1791" "SL1792"
+[289] "SL1793" "SL1794" "SL1795" "SL1796" "SL1797" "SL1798" "SL1799" "SL1800"
+[297] "SL1801" "SL1802" "SL1803" "SL1804" "SL1805" "SL1806" "SL1807" "SL1808"
+[305] "SL1809" "SL1810" "SL1811" "SL1812" "SL1813" "SL1814" "SL1815" "SL1816"
+[313] "SL1817" "SL1818" "SL1819" "SL1820" "SL1821" "SL1822" "SL1823" "SL1824"
+[321] "SL1825" "SL1826" "SL1827" "SL1828" "SL1829" "SL1830" "SL1831" "SL1832"
+[329] "SL1833" "SL1834" "SL1835" "SL1836" "SL1837" "SL1838" "SL1839" "SL1840"
+[337] "SL1841" "SL1842" "SL1843" "SL1844" "SL1845" "SL1846" "SL1847" "SL1848"
+[345] "SL1849" "SL1850" "SL1851" "SL1852" "SL1853" "SL1854" "SL1855" "SL1856"
+[353] "SL1857" "SL1858" "SL1859" "SL1860" "SL1861" "SL1862" "SL1863" "SL1864"
+[361] "SL1865" "SL1866" "SL1867" "SL1868" "SL1869" "SL1870" "SL1871" "SL1872"
+[369] "SL1873" "SL1874" "SL1875" "SL1876" "SL1877" "SL1878" "SL1879" "SL1880"
+[377] "SL1881" "SL1882" "SL1883" "SL1884" "SL1885" "SL1886" "SL1887" "SL1888"
+[385] "SL1889" "SL1890" "SL1891" "SL1892" "SL1893" "SL1894" "SL1895" "SL1896"
+[393] "SL1897" "SL1898" "SL1899" "SL1900" "SL1901" "SL1902" "SL1903" "SL1904"
+[401] "SL1905" "SL1906" "SL1907" "SL1908" "SL1909" "SL1910" "SL1911" "SL1912"
+[409] "SL1913" "SL1914" "SL1915" "SL1917" "SL1918" "SL1919" "SL1920" "SL1921"
+[417] "SL1922" "SL1923" "SL1924" "SL1925" "SL1926" "SL1927" "SL1928" "SL1929"
+[425] "SL1930" "SL1931" "SL1932" "SL1933" "SL1934" "SL1935" "SL1937" "SL1938"
+[433] "SL1939" "SL1940" "SL1941" "SL1942" "SL1943" "SL1944" "SL1945" "SL1946"
+[441] "SL1947" "SL1948" "SL1949" "SL1950" "SL1951" "SL1952" "SL1953" "SL1954"
+[449] "SL1955" "SL1956" "SL1957" "SL1958" "SL1959" "SL1960" "SL1961" "SL1962"
+[457] "SL1963" "SL1964" "SL1965" "SL1966" "SL1967" "SL1968" "SL1969" "SL1970"
+[465] "SL1971" "SL1972" "SL1973" "SL1974" "SL1975" "SL1976" "SL1977" "SL1978"
+[473] "SL1979" "SL1980" "SL1981" "SL1982" "SL1983" "SL1984" "SL1985" "SL1986"
+[481] "SL1987" "SL1988" "SL1989" "SL1990" "SL1991" "SL1992" "SL1993" "SL1994"
+[489] "SL1995" "SL1996" "SL1997" "SL1998" "SL1999" "SL2000" "SL2001" "SL2002"
+[497] "SL2003" "SL2004" "SL2005" "SL2006" "SL2007" "SL2008" "SL2009" "SL2010"
+[505] "SL2011" "SL2012" "SL2013" "SL2014" "SL2015" "SL2016" "SL2017" "SL2018"
+[513] "SL2019" "SL2020" "SL2021" "SL2022" "SL2023" "SL2024" "SL2025" "SLP2W" 
+[521] "SLPW1B" "SLPW3A" "SLPW4A" "SLPW5X" "SLPW6A" "SLPW7"  "SLPW8" 
+
+Identified 732 bimeras out of 22190 input sequences.

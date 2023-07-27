@@ -1,0 +1,39 @@
+[07/27/23 16:31:36]: /opt/linux/rocky/8.x/x86_64/pkgs/amptk/1.6/bin/amptk taxonomy -f FD_202307_3Pool.ASVs.fa -i FD_202307_3Pool.final.txt -d ITS
+
+[07/27/23 16:31:36]: OS: Rocky Linux 8.5, 64 cores, ~ 264 GB RAM. Python: 3.10.0
+[07/27/23 16:31:36]: Python Modules: numpy v1.24.2, pandas v1.5.3, matplotlib v3.7.1, psutil v5.9.4, natsort v8.3.1, biopython v1.81, edlib v1.3.9, biom-format v2.1.14
+[07/27/23 16:31:36]: AMPtk v1.6.0, VSEARCH v2.22.1
+[07/27/23 16:31:36]: Loading FASTA Records
+[07/27/23 16:31:36]: 16,379 OTUs
+[07/27/23 16:31:36]: Global alignment OTUs with usearch_global (VSEARCH) against ITS.udb
+[07/27/23 16:31:36]: vsearch --usearch_global FD_202307_3Pool.ASVs.fa --db /bigdata/operations/pkgadmin/opt/linux/centos/8.x/x86_64/pkgs/amptk/1.6/lib/python3.10/site-packages/amptk/DB/ITS.udb --userout FD_202307_3Pool.ASVs.usearch.txt --id 0.7 --strand both --output_no_hits --maxaccepts 500 --top_hits_only --userfields query+target+id --notrunclabels --threads 64
+[07/27/23 16:37:43]: vsearch v2.22.1_linux_x86_64, 251.5GB RAM, 64 cores
+https://github.com/torognes/vsearch
+
+Reading UDB file /bigdata/operations/pkgadmin/opt/linux/centos/8.x/x86_64/pkgs/amptk/1.6/lib/python3.10/site-packages/amptk/DB/ITS.udb 100%
+Reorganizing data in memory 100%
+Creating bitmaps 100%
+Parsing abundances 100%
+3660214381 nt in 6484445 seqs, min 100, max 6778, avg 564
+Searching 100%
+Matching unique query sequences: 8978 of 16379 (54.81%)
+
+[07/27/23 16:37:43]: Classifying OTUs with SINTAX (VSEARCH)
+[07/27/23 16:37:43]: vsearch --sintax FD_202307_3Pool.ASVs.fa --db /bigdata/operations/pkgadmin/opt/linux/centos/8.x/x86_64/pkgs/amptk/1.6/lib/python3.10/site-packages/amptk/DB/ITS_SINTAX.udb --tabbedout FD_202307_3Pool.ASVs.sintax.txt -sintax_cutoff 0.8 --threads 64 --notrunclabels
+[07/27/23 16:38:34]: vsearch v2.22.1_linux_x86_64, 251.5GB RAM, 64 cores
+https://github.com/torognes/vsearch
+
+Reading UDB file /bigdata/operations/pkgadmin/opt/linux/centos/8.x/x86_64/pkgs/amptk/1.6/lib/python3.10/site-packages/amptk/DB/ITS_SINTAX.udb 100%
+Reorganizing data in memory 100%
+Creating bitmaps 100%
+Parsing abundances 100%
+173522626 nt in 290642 seqs, min 100, max 6778, avg 597
+Classifying sequences 100%
+Classified 8242 of 16379 sequences (50.32%)
+
+[07/27/23 16:38:34]: SINTAX results parsed, resulting in 8,172 taxonomy predictions
+[07/27/23 16:38:45]: Global alignment results parsed, resulting in 16,379 taxonomy predictions
+[07/27/23 16:38:46]: Combined OTU taxonomy dictionary contains 16,379 taxonomy predictions
+[07/27/23 16:38:46]: Appending taxonomy to OTU table and OTUs
+[07/27/23 16:38:47]: Generating phylogenetic tree (MAFFT/FastTree)
+[07/27/23 16:38:47]: mafft FD_202307_3Pool.ASVs.fa
