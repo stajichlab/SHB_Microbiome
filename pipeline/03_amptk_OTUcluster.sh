@@ -33,7 +33,7 @@ if [ ! -f $BASE.otu_table.taxonomy.txt ]; then
 fi
 
 if [ ! -f $BASE.guilds.txt ]; then
- amptk funguild -i $BASE.otu_table.taxonomy.txt --db fungi -o $BASE
+ amptk funguild -i $BASE.otu_table.taxonomy.txt -o $BASE.guilds.txt
 fi
 
 if [ ! -f $BASE.taxonomy.fix.txt ]; then

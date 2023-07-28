@@ -37,3 +37,11 @@ Classified 8242 of 16379 sequences (50.32%)
 [07/27/23 16:38:46]: Appending taxonomy to OTU table and OTUs
 [07/27/23 16:38:47]: Generating phylogenetic tree (MAFFT/FastTree)
 [07/27/23 16:38:47]: mafft FD_202307_3Pool.ASVs.fa
+[07/27/23 16:47:06]: fasttree -nt FD_202307_3Pool.ASVs.mafft.fasta
+[07/27/23 17:13:39]: Taxonomy finished: FD_202307_3Pool.ASVs.taxonomy.txt
+[07/27/23 17:13:39]: Classic OTU table with taxonomy: FD_202307_3Pool.ASVs.otu_table.taxonomy.txt
+[07/27/23 17:13:49]: biom convert -i FD_202307_3Pool.final.txt -o FD_202307_3Pool.ASVs.biom.tmp --table-type OTU table --to-json
+[07/27/23 17:14:03]: biom add-metadata -i FD_202307_3Pool.ASVs.biom.tmp -o FD_202307_3Pool.ASVs.biom --observation-metadata-fp FD_202307_3Pool.ASVs.qiime.taxonomy.txt --sc-separated taxonomy --output-as-json
+[07/27/23 17:14:13]: BIOM OTU table created: FD_202307_3Pool.ASVs.biom
+[07/27/23 17:14:13]: OTUs with taxonomy: FD_202307_3Pool.ASVs.otus.taxonomy.fa
+[07/27/23 17:14:13]: OTU phylogeny: FD_202307_3Pool.ASVs.tree.phy

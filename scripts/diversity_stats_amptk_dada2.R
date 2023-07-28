@@ -23,22 +23,24 @@ sampleData <- sample_data(meta)
 
 
 # I had to fix this file by hand to get rid of leading '#'
-otus <- read.table("results/amptk/denoise/FD_202307_3Pool.otu_table.txt",header=T,sep="\t",row.names=1)
+otus <- read.table("results/amptk.dada2/FD_202307_3Pool.final.txt",header=T,sep="\t",row.names=1)
 
 otumat <- as(as.matrix(otus), "matrix")
 OTU = otu_table(otumat, taxa_are_rows = TRUE)
 
 head(OTU)
 
-taxa <- read.table("results/amptk/denoise/FD_202307_3Pool.taxonomy.fix.txt", header=T,sep="\t",row.names=1)
+taxa <- read.table("results/amptk.dada2/FD_202307_3Pool.ASVs.taxonomy.fix.txt", header=T,sep="\t",row.names=1)
 taxmat <- as(as.matrix(taxa),"matrix")
 TAX = tax_table(taxmat)
 
-treefile = "results/amptk/denoise/FD_202307_3Pool.tree.phy"
+treefile = "results/amptk.dada2/FD_202307_3Pool.ASVs.tree.phy"
 tree = read.tree(treefile)
 
 # phyloseq object
 physeq = phyloseq(OTU,TAX,sampleData,tree)
+
+
 physeq.prune = prune_taxa(taxa_sums(physeq) > 1, physeq)
 # some QC
 readcount = data.table(as(sample_data(physeq.prune), "data.frame"),
@@ -55,6 +57,15 @@ png("./Figures/Fungal_Pamericanus_SequencingDepth.png", units="in", width = 5.8,
 SeqDepth
 pdf("./Figures/Fungal_Pamericanus_SequencingDepth.pdf", width = 5.8, height = 5.8 )
 SeqDepth
+dev.off()
+dev.off()
+
+psTopNOTUs = names(sort(taxa_sums(physeq.prune), TRUE)[1:100])
+pstop.prune = prune_taxa(psTopNOTUs, physeq.prune)
+plot_bar(pstop.prune, x = "Sample", y = "Abundance", fill ="Phylum") + geom_bar(aes(color=Phylum, fill=Phylum), stat="identity", position="stack")
+
+
+
 
 set.seed(1)
 physeq.prune.rarefy = rarefy_even_depth(physeq.prune, sample.size = 1000, 

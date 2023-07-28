@@ -21,21 +21,22 @@ if [ ! -f $BASE.ASVs.fa ]; then
 	amptk dada2 -i $BASE.demux.fq.gz --platform illumina -o $BASE --cpus $CPU --uchime_ref ITS
 fi
 
-#if [ ! -f $BASE.filtered.otus.fa ]; then
-# amptk filter -i $BASE.otu_table.txt -f $BASE.cluster.otus.fa -p 0.005
-#fi
+if [ ! -f $BASE.filtered.otus.fa ]; then
+  amptk filter -i $BASE.otu_table.txt -f $BASE.cluster.otus.fa -p 0.005
+fi
 
 if [ ! -f $BASE.otu_table.taxonomy.txt ]; then
- amptk taxonomy -f $BASE.ASVs.fa -i $BASE.final.txt -d ITS
+  amptk taxonomy -f $BASE.ASVs.fa -i $BASE.final.txt -d ITS
 fi
 
 
-#if [ ! -f $BASE.guilds.txt ]; then
-# amptk funguild -i $BASE.otu_table.taxonomy.txt --db fungi -o $BASE
-#fi
+if [ ! -f $BASE.ASVs.guilds.txt ]; then
+ amptk funguild -i $BASE.ASVs.otu_table.taxonomy.txt -o $BASE.ASVs.guilds.txt
+fi
 
-#if [ ! -f $BASE.taxonomy.fix.txt ]; then
-# perl rdp_taxonmy2mat.pl<$BASE.taxonomy.txt>$BASE.taxonomy.fix.txt
-#fi
+
+if [ ! -f $BASE.taxonomy.fix.txt ]; then
+ perl ../../scripts/rdp_taxonmy2mat.pl<$BASE.taxonomy.txt>$BASE.taxonomy.fix.txt
+fi
 
 popd
